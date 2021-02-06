@@ -1,0 +1,967 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06E921F8F9F90B590891586E /* Pods_Mobi_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8943C474FA5067584F4F0666 /* Pods_Mobi_iOS.framework */; };
+		2604137C964D1267AFEF365C /* Pods_Mobi_iOS_Mobi_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F07ACC48F2CBD765AEA5D560 /* Pods_Mobi_iOS_Mobi_iOSUITests.framework */; };
+		A29003CB4A379B0F07F670BA /* Pods_Mobi_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31862C638940F7855985385 /* Pods_Mobi_iOSTests.framework */; };
+		E24E681525CDBA5000E75BD2 /* handstouching.png in Resources */ = {isa = PBXBuildFile; fileRef = E24E681425CDBA5000E75BD2 /* handstouching.png */; };
+		E24E682A25CDBBA100E75BD2 /* mentoring.png in Resources */ = {isa = PBXBuildFile; fileRef = E24E682925CDBBA100E75BD2 /* mentoring.png */; };
+		E24E682F25CDBC8300E75BD2 /* mentoring-fliped.png in Resources */ = {isa = PBXBuildFile; fileRef = E24E682E25CDBC8300E75BD2 /* mentoring-fliped.png */; };
+		E260841125C0CF0F00FBEB60 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E260841025C0CF0F00FBEB60 /* logo.png */; };
+		E260841625C0CFDA00FBEB60 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = E260841525C0CFDA00FBEB60 /* logo2.png */; };
+		E260841B25C17C0900FBEB60 /* LogoFruit.png in Resources */ = {isa = PBXBuildFile; fileRef = E260841A25C17C0900FBEB60 /* LogoFruit.png */; };
+		E260842125C187E700FBEB60 /* ScrollViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260842025C187E700FBEB60 /* ScrollViewConfig.swift */; };
+		E260842F25C1989500FBEB60 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260842E25C1989500FBEB60 /* Themes.swift */; };
+		E2799D8425C2EE2600FDC660 /* UpdateScreenWhenRotating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2799D8325C2EE2600FDC660 /* UpdateScreenWhenRotating.swift */; };
+		E2A615AD25BDC311009CF961 /* HexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A615AC25BDC311009CF961 /* HexColors.swift */; };
+		E2A615D625BDD387009CF961 /* Eina03-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615B625BDD386009CF961 /* Eina03-RegularItalic.ttf */; };
+		E2A615D725BDD387009CF961 /* Eina04-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615B725BDD386009CF961 /* Eina04-Bold.ttf */; };
+		E2A615D825BDD387009CF961 /* Eina04-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615B825BDD386009CF961 /* Eina04-SemiBold.ttf */; };
+		E2A615D925BDD387009CF961 /* Eina03-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615B925BDD386009CF961 /* Eina03-Regular.ttf */; };
+		E2A615DA25BDD387009CF961 /* Eina03-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615BA25BDD386009CF961 /* Eina03-BoldItalic.ttf */; };
+		E2A615DB25BDD387009CF961 /* Eina04-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615BB25BDD386009CF961 /* Eina04-RegularItalic.ttf */; };
+		E2A615DC25BDD387009CF961 /* Eina01-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615BC25BDD386009CF961 /* Eina01-BoldItalic.ttf */; };
+		E2A615DD25BDD387009CF961 /* Eina02-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615BD25BDD386009CF961 /* Eina02-BoldItalic.ttf */; };
+		E2A615DE25BDD387009CF961 /* Eina03-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615BE25BDD386009CF961 /* Eina03-LightItalic.ttf */; };
+		E2A615DF25BDD387009CF961 /* Eina03-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615BF25BDD386009CF961 /* Eina03-SemiBold.ttf */; };
+		E2A615E025BDD387009CF961 /* Eina04-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615C025BDD386009CF961 /* Eina04-Light.ttf */; };
+		E2A615E125BDD387009CF961 /* Eina04-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615C125BDD386009CF961 /* Eina04-SemiboldItalic.ttf */; };
+		E2A615E225BDD387009CF961 /* Eina02-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615C225BDD386009CF961 /* Eina02-RegularItalic.ttf */; };
+		E2A615E325BDD387009CF961 /* Eina02-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615C325BDD386009CF961 /* Eina02-SemiBold.ttf */; };
+		E2A615E425BDD387009CF961 /* Eina04-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615C425BDD386009CF961 /* Eina04-Regular.ttf */; };
+		E2A615E525BDD387009CF961 /* Eina04-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615C525BDD386009CF961 /* Eina04-BoldItalic.ttf */; };
+		E2A615E625BDD387009CF961 /* Eina01-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615C625BDD386009CF961 /* Eina01-Bold.ttf */; };
+		E2A615E725BDD387009CF961 /* Eina01-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615C725BDD387009CF961 /* Eina01-SemiBold.ttf */; };
+		E2A615E825BDD387009CF961 /* Eina01-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615C825BDD387009CF961 /* Eina01-LightItalic.ttf */; };
+		E2A615E925BDD387009CF961 /* Eina02-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615C925BDD387009CF961 /* Eina02-Light.ttf */; };
+		E2A615EA25BDD387009CF961 /* Eina02-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615CA25BDD387009CF961 /* Eina02-LightItalic.ttf */; };
+		E2A615EB25BDD387009CF961 /* Eina03-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615CB25BDD387009CF961 /* Eina03-Bold.ttf */; };
+		E2A615EC25BDD387009CF961 /* Eina01-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615CC25BDD387009CF961 /* Eina01-RegularItalic.ttf */; };
+		E2A615ED25BDD387009CF961 /* Eina02-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615CD25BDD387009CF961 /* Eina02-SemiboldItalic.ttf */; };
+		E2A615EE25BDD387009CF961 /* Eina02-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615CE25BDD387009CF961 /* Eina02-Bold.ttf */; };
+		E2A615EF25BDD387009CF961 /* Eina02-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615CF25BDD387009CF961 /* Eina02-Regular.ttf */; };
+		E2A615F025BDD387009CF961 /* Eina01-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D025BDD387009CF961 /* Eina01-Light.ttf */; };
+		E2A615F125BDD387009CF961 /* Eina03-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D125BDD387009CF961 /* Eina03-Light.ttf */; };
+		E2A615F225BDD387009CF961 /* Eina04-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D225BDD387009CF961 /* Eina04-LightItalic.ttf */; };
+		E2A615F325BDD387009CF961 /* Eina03-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D325BDD387009CF961 /* Eina03-SemiboldItalic.ttf */; };
+		E2A615F425BDD387009CF961 /* Eina01-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D425BDD387009CF961 /* Eina01-Regular.ttf */; };
+		E2A615F525BDD387009CF961 /* Eina01-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D525BDD387009CF961 /* Eina01-SemiboldItalic.ttf */; };
+		E2A615FB25BE014E009CF961 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A615FA25BE014D009CF961 /* google.png */; };
+		E2C3802C25C2BAB200463ABF /* AdaptiveResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3802B25C2BAB200463ABF /* AdaptiveResolution.swift */; };
+		E2E589FB25BDA9E900834728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E589FA25BDA9E900834728 /* AppDelegate.swift */; };
+		E2E589FD25BDA9E900834728 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E589FC25BDA9E900834728 /* SceneDelegate.swift */; };
+		E2E589FF25BDA9E900834728 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E589FE25BDA9E900834728 /* LoginController.swift */; };
+		E2E58A0225BDA9E900834728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E58A0025BDA9E900834728 /* Main.storyboard */; };
+		E2E58A0525BDA9E900834728 /* Devium_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2E58A0325BDA9E900834728 /* Devium_iOS.xcdatamodeld */; };
+		E2E58A0725BDA9EB00834728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E58A0625BDA9EB00834728 /* Assets.xcassets */; };
+		E2E58A0A25BDA9EB00834728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E58A0825BDA9EB00834728 /* LaunchScreen.storyboard */; };
+		E2E58A1525BDA9EB00834728 /* Devium_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E58A1425BDA9EB00834728 /* Devium_iOSTests.swift */; };
+		E2E58A2025BDA9EB00834728 /* Devium_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E58A1F25BDA9EB00834728 /* Devium_iOSUITests.swift */; };
+		E2F8C2C225C32DEE00BE9736 /* Open Doodles.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F8C2C125C32DEE00BE9736 /* Open Doodles.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2E58A1125BDA9EB00834728 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2E589EF25BDA9E900834728 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2E589F625BDA9E900834728;
+			remoteInfo = "Devium iOS";
+		};
+		E2E58A1C25BDA9EB00834728 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2E589EF25BDA9E900834728 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2E589F625BDA9E900834728;
+			remoteInfo = "Devium iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		004E9AE902D1B3D98352F970 /* Pods-Devium iOS-Devium iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devium iOS-Devium iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Devium iOS-Devium iOSUITests/Pods-Devium iOS-Devium iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0D2905825425D685ADA93B30 /* Pods-Devium iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devium iOS.debug.xcconfig"; path = "Target Support Files/Pods-Devium iOS/Pods-Devium iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		232224E6687E10190BCCBCEF /* Pods-Mobi iOS-Mobi iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi iOS-Mobi iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mobi iOS-Mobi iOSUITests/Pods-Mobi iOS-Mobi iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F49DCCDAE99C812E85B0BDD /* Pods-Devium iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devium iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Devium iOSTests/Pods-Devium iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3D7E30E1C733EFCC954984C4 /* Pods-Devium iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devium iOS.release.xcconfig"; path = "Target Support Files/Pods-Devium iOS/Pods-Devium iOS.release.xcconfig"; sourceTree = "<group>"; };
+		4708E755FF7AEBE5B07E3DCD /* Pods-Devium iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devium iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Devium iOSTests/Pods-Devium iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		5AE6DCA759359642B6E28052 /* Pods-Mobi iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi iOS.debug.xcconfig"; path = "Target Support Files/Pods-Mobi iOS/Pods-Mobi iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		654A204F32611CFEE492F77A /* Pods-Mobi iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Mobi iOSTests/Pods-Mobi iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7701D44B312CD93D157630FD /* Pods-Mobi iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi iOS.release.xcconfig"; path = "Target Support Files/Pods-Mobi iOS/Pods-Mobi iOS.release.xcconfig"; sourceTree = "<group>"; };
+		833F6D8F5997CC83868177B3 /* Pods-Devium iOS-Devium iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devium iOS-Devium iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Devium iOS-Devium iOSUITests/Pods-Devium iOS-Devium iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8943C474FA5067584F4F0666 /* Pods_Mobi_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobi_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8CB5925256E4C0B0141C5E2 /* Pods-Mobi iOS-Mobi iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi iOS-Mobi iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Mobi iOS-Mobi iOSUITests/Pods-Mobi iOS-Mobi iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B687A30C06E5970B481EAFB1 /* Pods-Mobi iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Mobi iOSTests/Pods-Mobi iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		E24E681425CDBA5000E75BD2 /* handstouching.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handstouching.png; sourceTree = "<group>"; };
+		E24E682925CDBBA100E75BD2 /* mentoring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mentoring.png; sourceTree = "<group>"; };
+		E24E682E25CDBC8300E75BD2 /* mentoring-fliped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mentoring-fliped.png"; sourceTree = "<group>"; };
+		E260841025C0CF0F00FBEB60 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		E260841525C0CFDA00FBEB60 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
+		E260841A25C17C0900FBEB60 /* LogoFruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoFruit.png; sourceTree = "<group>"; };
+		E260842025C187E700FBEB60 /* ScrollViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewConfig.swift; sourceTree = "<group>"; };
+		E260842E25C1989500FBEB60 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		E2799D8325C2EE2600FDC660 /* UpdateScreenWhenRotating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateScreenWhenRotating.swift; sourceTree = "<group>"; };
+		E2A615AC25BDC311009CF961 /* HexColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColors.swift; sourceTree = "<group>"; };
+		E2A615B625BDD386009CF961 /* Eina03-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina03-RegularItalic.ttf"; sourceTree = "<group>"; };
+		E2A615B725BDD386009CF961 /* Eina04-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina04-Bold.ttf"; sourceTree = "<group>"; };
+		E2A615B825BDD386009CF961 /* Eina04-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina04-SemiBold.ttf"; sourceTree = "<group>"; };
+		E2A615B925BDD386009CF961 /* Eina03-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina03-Regular.ttf"; sourceTree = "<group>"; };
+		E2A615BA25BDD386009CF961 /* Eina03-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina03-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E2A615BB25BDD386009CF961 /* Eina04-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina04-RegularItalic.ttf"; sourceTree = "<group>"; };
+		E2A615BC25BDD386009CF961 /* Eina01-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E2A615BD25BDD386009CF961 /* Eina02-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina02-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E2A615BE25BDD386009CF961 /* Eina03-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina03-LightItalic.ttf"; sourceTree = "<group>"; };
+		E2A615BF25BDD386009CF961 /* Eina03-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina03-SemiBold.ttf"; sourceTree = "<group>"; };
+		E2A615C025BDD386009CF961 /* Eina04-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina04-Light.ttf"; sourceTree = "<group>"; };
+		E2A615C125BDD386009CF961 /* Eina04-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina04-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		E2A615C225BDD386009CF961 /* Eina02-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina02-RegularItalic.ttf"; sourceTree = "<group>"; };
+		E2A615C325BDD386009CF961 /* Eina02-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina02-SemiBold.ttf"; sourceTree = "<group>"; };
+		E2A615C425BDD386009CF961 /* Eina04-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina04-Regular.ttf"; sourceTree = "<group>"; };
+		E2A615C525BDD386009CF961 /* Eina04-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina04-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E2A615C625BDD386009CF961 /* Eina01-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-Bold.ttf"; sourceTree = "<group>"; };
+		E2A615C725BDD387009CF961 /* Eina01-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-SemiBold.ttf"; sourceTree = "<group>"; };
+		E2A615C825BDD387009CF961 /* Eina01-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-LightItalic.ttf"; sourceTree = "<group>"; };
+		E2A615C925BDD387009CF961 /* Eina02-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina02-Light.ttf"; sourceTree = "<group>"; };
+		E2A615CA25BDD387009CF961 /* Eina02-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina02-LightItalic.ttf"; sourceTree = "<group>"; };
+		E2A615CB25BDD387009CF961 /* Eina03-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina03-Bold.ttf"; sourceTree = "<group>"; };
+		E2A615CC25BDD387009CF961 /* Eina01-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-RegularItalic.ttf"; sourceTree = "<group>"; };
+		E2A615CD25BDD387009CF961 /* Eina02-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina02-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		E2A615CE25BDD387009CF961 /* Eina02-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina02-Bold.ttf"; sourceTree = "<group>"; };
+		E2A615CF25BDD387009CF961 /* Eina02-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina02-Regular.ttf"; sourceTree = "<group>"; };
+		E2A615D025BDD387009CF961 /* Eina01-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-Light.ttf"; sourceTree = "<group>"; };
+		E2A615D125BDD387009CF961 /* Eina03-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina03-Light.ttf"; sourceTree = "<group>"; };
+		E2A615D225BDD387009CF961 /* Eina04-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina04-LightItalic.ttf"; sourceTree = "<group>"; };
+		E2A615D325BDD387009CF961 /* Eina03-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina03-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		E2A615D425BDD387009CF961 /* Eina01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-Regular.ttf"; sourceTree = "<group>"; };
+		E2A615D525BDD387009CF961 /* Eina01-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		E2A615FA25BE014D009CF961 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		E2C3802B25C2BAB200463ABF /* AdaptiveResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveResolution.swift; sourceTree = "<group>"; };
+		E2E589F725BDA9E900834728 /* Mobi iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobi iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2E589FA25BDA9E900834728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2E589FC25BDA9E900834728 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E2E589FE25BDA9E900834728 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		E2E58A0125BDA9E900834728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E2E58A0425BDA9E900834728 /* Devium_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Devium_iOS.xcdatamodel; sourceTree = "<group>"; };
+		E2E58A0625BDA9EB00834728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2E58A0925BDA9EB00834728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E2E58A0B25BDA9EB00834728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2E58A1025BDA9EB00834728 /* Mobi iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mobi iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2E58A1425BDA9EB00834728 /* Devium_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devium_iOSTests.swift; sourceTree = "<group>"; };
+		E2E58A1625BDA9EB00834728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2E58A1B25BDA9EB00834728 /* Mobi iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mobi iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2E58A1F25BDA9EB00834728 /* Devium_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devium_iOSUITests.swift; sourceTree = "<group>"; };
+		E2E58A2125BDA9EB00834728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2F8C2C125C32DEE00BE9736 /* Open Doodles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Open Doodles.png"; sourceTree = "<group>"; };
+		E31862C638940F7855985385 /* Pods_Mobi_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobi_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F07ACC48F2CBD765AEA5D560 /* Pods_Mobi_iOS_Mobi_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobi_iOS_Mobi_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2E589F425BDA9E900834728 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06E921F8F9F90B590891586E /* Pods_Mobi_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2E58A0D25BDA9EB00834728 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A29003CB4A379B0F07F670BA /* Pods_Mobi_iOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2E58A1825BDA9EB00834728 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2604137C964D1267AFEF365C /* Pods_Mobi_iOS_Mobi_iOSUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31B6B8DBDE4DA00255B5EDA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D2905825425D685ADA93B30 /* Pods-Devium iOS.debug.xcconfig */,
+				3D7E30E1C733EFCC954984C4 /* Pods-Devium iOS.release.xcconfig */,
+				833F6D8F5997CC83868177B3 /* Pods-Devium iOS-Devium iOSUITests.debug.xcconfig */,
+				004E9AE902D1B3D98352F970 /* Pods-Devium iOS-Devium iOSUITests.release.xcconfig */,
+				2F49DCCDAE99C812E85B0BDD /* Pods-Devium iOSTests.debug.xcconfig */,
+				4708E755FF7AEBE5B07E3DCD /* Pods-Devium iOSTests.release.xcconfig */,
+				5AE6DCA759359642B6E28052 /* Pods-Mobi iOS.debug.xcconfig */,
+				7701D44B312CD93D157630FD /* Pods-Mobi iOS.release.xcconfig */,
+				232224E6687E10190BCCBCEF /* Pods-Mobi iOS-Mobi iOSUITests.debug.xcconfig */,
+				A8CB5925256E4C0B0141C5E2 /* Pods-Mobi iOS-Mobi iOSUITests.release.xcconfig */,
+				654A204F32611CFEE492F77A /* Pods-Mobi iOSTests.debug.xcconfig */,
+				B687A30C06E5970B481EAFB1 /* Pods-Mobi iOSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		86E7EAD952C702DA5E454D67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8943C474FA5067584F4F0666 /* Pods_Mobi_iOS.framework */,
+				F07ACC48F2CBD765AEA5D560 /* Pods_Mobi_iOS_Mobi_iOSUITests.framework */,
+				E31862C638940F7855985385 /* Pods_Mobi_iOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E260841F25C187B100FBEB60 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E260842025C187E700FBEB60 /* ScrollViewConfig.swift */,
+				E2799D8325C2EE2600FDC660 /* UpdateScreenWhenRotating.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		E2A615AB25BDC302009CF961 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2A615AC25BDC311009CF961 /* HexColors.swift */,
+				E260842E25C1989500FBEB60 /* Themes.swift */,
+				E2C3802B25C2BAB200463ABF /* AdaptiveResolution.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2A615B425BDD354009CF961 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E2A615B525BDD364009CF961 /* Eina */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E2A615B525BDD364009CF961 /* Eina */ = {
+			isa = PBXGroup;
+			children = (
+				E2A615C625BDD386009CF961 /* Eina01-Bold.ttf */,
+				E2A615BC25BDD386009CF961 /* Eina01-BoldItalic.ttf */,
+				E2A615D025BDD387009CF961 /* Eina01-Light.ttf */,
+				E2A615C825BDD387009CF961 /* Eina01-LightItalic.ttf */,
+				E2A615D425BDD387009CF961 /* Eina01-Regular.ttf */,
+				E2A615CC25BDD387009CF961 /* Eina01-RegularItalic.ttf */,
+				E2A615C725BDD387009CF961 /* Eina01-SemiBold.ttf */,
+				E2A615D525BDD387009CF961 /* Eina01-SemiboldItalic.ttf */,
+				E2A615CE25BDD387009CF961 /* Eina02-Bold.ttf */,
+				E2A615BD25BDD386009CF961 /* Eina02-BoldItalic.ttf */,
+				E2A615C925BDD387009CF961 /* Eina02-Light.ttf */,
+				E2A615CA25BDD387009CF961 /* Eina02-LightItalic.ttf */,
+				E2A615CF25BDD387009CF961 /* Eina02-Regular.ttf */,
+				E2A615C225BDD386009CF961 /* Eina02-RegularItalic.ttf */,
+				E2A615C325BDD386009CF961 /* Eina02-SemiBold.ttf */,
+				E2A615CD25BDD387009CF961 /* Eina02-SemiboldItalic.ttf */,
+				E2A615CB25BDD387009CF961 /* Eina03-Bold.ttf */,
+				E2A615BA25BDD386009CF961 /* Eina03-BoldItalic.ttf */,
+				E2A615D125BDD387009CF961 /* Eina03-Light.ttf */,
+				E2A615BE25BDD386009CF961 /* Eina03-LightItalic.ttf */,
+				E2A615B925BDD386009CF961 /* Eina03-Regular.ttf */,
+				E2A615B625BDD386009CF961 /* Eina03-RegularItalic.ttf */,
+				E2A615BF25BDD386009CF961 /* Eina03-SemiBold.ttf */,
+				E2A615D325BDD387009CF961 /* Eina03-SemiboldItalic.ttf */,
+				E2A615B725BDD386009CF961 /* Eina04-Bold.ttf */,
+				E2A615C525BDD386009CF961 /* Eina04-BoldItalic.ttf */,
+				E2A615C025BDD386009CF961 /* Eina04-Light.ttf */,
+				E2A615D225BDD387009CF961 /* Eina04-LightItalic.ttf */,
+				E2A615C425BDD386009CF961 /* Eina04-Regular.ttf */,
+				E2A615BB25BDD386009CF961 /* Eina04-RegularItalic.ttf */,
+				E2A615B825BDD386009CF961 /* Eina04-SemiBold.ttf */,
+				E2A615C125BDD386009CF961 /* Eina04-SemiboldItalic.ttf */,
+			);
+			path = Eina;
+			sourceTree = "<group>";
+		};
+		E2A615F925BE0134009CF961 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E24E682E25CDBC8300E75BD2 /* mentoring-fliped.png */,
+				E24E682925CDBBA100E75BD2 /* mentoring.png */,
+				E24E681425CDBA5000E75BD2 /* handstouching.png */,
+				E2F8C2C125C32DEE00BE9736 /* Open Doodles.png */,
+				E260841525C0CFDA00FBEB60 /* logo2.png */,
+				E260841A25C17C0900FBEB60 /* LogoFruit.png */,
+				E260841025C0CF0F00FBEB60 /* logo.png */,
+				E2A615FA25BE014D009CF961 /* google.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		E2C0710425C01C630004BB28 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E260841F25C187B100FBEB60 /* ScrollView */,
+				E2E589FE25BDA9E900834728 /* LoginController.swift */,
+				E2E58A0025BDA9E900834728 /* Main.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E2E589EE25BDA9E900834728 = {
+			isa = PBXGroup;
+			children = (
+				E2E589F925BDA9E900834728 /* Mobi iOS */,
+				E2E58A1325BDA9EB00834728 /* Mobi iOSTests */,
+				E2E58A1E25BDA9EB00834728 /* Mobi iOSUITests */,
+				E2E589F825BDA9E900834728 /* Products */,
+				31B6B8DBDE4DA00255B5EDA9 /* Pods */,
+				86E7EAD952C702DA5E454D67 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E2E589F825BDA9E900834728 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2E589F725BDA9E900834728 /* Mobi iOS.app */,
+				E2E58A1025BDA9EB00834728 /* Mobi iOSTests.xctest */,
+				E2E58A1B25BDA9EB00834728 /* Mobi iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2E589F925BDA9E900834728 /* Mobi iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E2A615F925BE0134009CF961 /* Icons */,
+				E2A615B425BDD354009CF961 /* Fonts */,
+				E2A615AB25BDC302009CF961 /* Extensions */,
+				E2E589FA25BDA9E900834728 /* AppDelegate.swift */,
+				E2E589FC25BDA9E900834728 /* SceneDelegate.swift */,
+				E2C0710425C01C630004BB28 /* Login */,
+				E2E58A0625BDA9EB00834728 /* Assets.xcassets */,
+				E2E58A0825BDA9EB00834728 /* LaunchScreen.storyboard */,
+				E2E58A0B25BDA9EB00834728 /* Info.plist */,
+				E2E58A0325BDA9E900834728 /* Devium_iOS.xcdatamodeld */,
+			);
+			path = "Mobi iOS";
+			sourceTree = "<group>";
+		};
+		E2E58A1325BDA9EB00834728 /* Mobi iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				E2E58A1425BDA9EB00834728 /* Devium_iOSTests.swift */,
+				E2E58A1625BDA9EB00834728 /* Info.plist */,
+			);
+			path = "Mobi iOSTests";
+			sourceTree = "<group>";
+		};
+		E2E58A1E25BDA9EB00834728 /* Mobi iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E2E58A1F25BDA9EB00834728 /* Devium_iOSUITests.swift */,
+				E2E58A2125BDA9EB00834728 /* Info.plist */,
+			);
+			path = "Mobi iOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2E589F625BDA9E900834728 /* Mobi iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2E58A2425BDA9EB00834728 /* Build configuration list for PBXNativeTarget "Mobi iOS" */;
+			buildPhases = (
+				BC93F79F0F4761E57938E74C /* [CP] Check Pods Manifest.lock */,
+				E2E589F325BDA9E900834728 /* Sources */,
+				E2E589F425BDA9E900834728 /* Frameworks */,
+				E2E589F525BDA9E900834728 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mobi iOS";
+			productName = "Devium iOS";
+			productReference = E2E589F725BDA9E900834728 /* Mobi iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2E58A0F25BDA9EB00834728 /* Mobi iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2E58A2725BDA9EB00834728 /* Build configuration list for PBXNativeTarget "Mobi iOSTests" */;
+			buildPhases = (
+				C77BF1917810019648D4C3C6 /* [CP] Check Pods Manifest.lock */,
+				E2E58A0C25BDA9EB00834728 /* Sources */,
+				E2E58A0D25BDA9EB00834728 /* Frameworks */,
+				E2E58A0E25BDA9EB00834728 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2E58A1225BDA9EB00834728 /* PBXTargetDependency */,
+			);
+			name = "Mobi iOSTests";
+			productName = "Devium iOSTests";
+			productReference = E2E58A1025BDA9EB00834728 /* Mobi iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E2E58A1A25BDA9EB00834728 /* Mobi iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2E58A2A25BDA9EB00834728 /* Build configuration list for PBXNativeTarget "Mobi iOSUITests" */;
+			buildPhases = (
+				760B293BE442EE79582CA884 /* [CP] Check Pods Manifest.lock */,
+				E2E58A1725BDA9EB00834728 /* Sources */,
+				E2E58A1825BDA9EB00834728 /* Frameworks */,
+				E2E58A1925BDA9EB00834728 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2E58A1D25BDA9EB00834728 /* PBXTargetDependency */,
+			);
+			name = "Mobi iOSUITests";
+			productName = "Devium iOSUITests";
+			productReference = E2E58A1B25BDA9EB00834728 /* Mobi iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2E589EF25BDA9E900834728 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					E2E589F625BDA9E900834728 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					E2E58A0F25BDA9EB00834728 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = E2E589F625BDA9E900834728;
+					};
+					E2E58A1A25BDA9EB00834728 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = E2E589F625BDA9E900834728;
+					};
+				};
+			};
+			buildConfigurationList = E2E589F225BDA9E900834728 /* Build configuration list for PBXProject "Mobi iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2E589EE25BDA9E900834728;
+			productRefGroup = E2E589F825BDA9E900834728 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2E589F625BDA9E900834728 /* Mobi iOS */,
+				E2E58A0F25BDA9EB00834728 /* Mobi iOSTests */,
+				E2E58A1A25BDA9EB00834728 /* Mobi iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2E589F525BDA9E900834728 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2A615F525BDD387009CF961 /* Eina01-SemiboldItalic.ttf in Resources */,
+				E2A615D825BDD387009CF961 /* Eina04-SemiBold.ttf in Resources */,
+				E24E682F25CDBC8300E75BD2 /* mentoring-fliped.png in Resources */,
+				E2A615EC25BDD387009CF961 /* Eina01-RegularItalic.ttf in Resources */,
+				E2A615F325BDD387009CF961 /* Eina03-SemiboldItalic.ttf in Resources */,
+				E2A615E525BDD387009CF961 /* Eina04-BoldItalic.ttf in Resources */,
+				E2A615E325BDD387009CF961 /* Eina02-SemiBold.ttf in Resources */,
+				E2A615EE25BDD387009CF961 /* Eina02-Bold.ttf in Resources */,
+				E2A615E725BDD387009CF961 /* Eina01-SemiBold.ttf in Resources */,
+				E2A615EA25BDD387009CF961 /* Eina02-LightItalic.ttf in Resources */,
+				E2A615DE25BDD387009CF961 /* Eina03-LightItalic.ttf in Resources */,
+				E24E681525CDBA5000E75BD2 /* handstouching.png in Resources */,
+				E2A615DF25BDD387009CF961 /* Eina03-SemiBold.ttf in Resources */,
+				E2A615DC25BDD387009CF961 /* Eina01-BoldItalic.ttf in Resources */,
+				E2A615D725BDD387009CF961 /* Eina04-Bold.ttf in Resources */,
+				E2E58A0A25BDA9EB00834728 /* LaunchScreen.storyboard in Resources */,
+				E2A615E025BDD387009CF961 /* Eina04-Light.ttf in Resources */,
+				E2A615DD25BDD387009CF961 /* Eina02-BoldItalic.ttf in Resources */,
+				E2A615F225BDD387009CF961 /* Eina04-LightItalic.ttf in Resources */,
+				E2A615E225BDD387009CF961 /* Eina02-RegularItalic.ttf in Resources */,
+				E2A615F425BDD387009CF961 /* Eina01-Regular.ttf in Resources */,
+				E2A615D625BDD387009CF961 /* Eina03-RegularItalic.ttf in Resources */,
+				E260841B25C17C0900FBEB60 /* LogoFruit.png in Resources */,
+				E2A615DB25BDD387009CF961 /* Eina04-RegularItalic.ttf in Resources */,
+				E2A615D925BDD387009CF961 /* Eina03-Regular.ttf in Resources */,
+				E2A615EB25BDD387009CF961 /* Eina03-Bold.ttf in Resources */,
+				E2A615E125BDD387009CF961 /* Eina04-SemiboldItalic.ttf in Resources */,
+				E2A615E925BDD387009CF961 /* Eina02-Light.ttf in Resources */,
+				E260841625C0CFDA00FBEB60 /* logo2.png in Resources */,
+				E2A615DA25BDD387009CF961 /* Eina03-BoldItalic.ttf in Resources */,
+				E24E682A25CDBBA100E75BD2 /* mentoring.png in Resources */,
+				E2A615EF25BDD387009CF961 /* Eina02-Regular.ttf in Resources */,
+				E2E58A0725BDA9EB00834728 /* Assets.xcassets in Resources */,
+				E2A615E425BDD387009CF961 /* Eina04-Regular.ttf in Resources */,
+				E2F8C2C225C32DEE00BE9736 /* Open Doodles.png in Resources */,
+				E2A615E825BDD387009CF961 /* Eina01-LightItalic.ttf in Resources */,
+				E2A615ED25BDD387009CF961 /* Eina02-SemiboldItalic.ttf in Resources */,
+				E2E58A0225BDA9E900834728 /* Main.storyboard in Resources */,
+				E260841125C0CF0F00FBEB60 /* logo.png in Resources */,
+				E2A615E625BDD387009CF961 /* Eina01-Bold.ttf in Resources */,
+				E2A615FB25BE014E009CF961 /* google.png in Resources */,
+				E2A615F025BDD387009CF961 /* Eina01-Light.ttf in Resources */,
+				E2A615F125BDD387009CF961 /* Eina03-Light.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2E58A0E25BDA9EB00834728 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2E58A1925BDA9EB00834728 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		760B293BE442EE79582CA884 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mobi iOS-Mobi iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC93F79F0F4761E57938E74C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mobi iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C77BF1917810019648D4C3C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mobi iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2E589F325BDA9E900834728 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E260842F25C1989500FBEB60 /* Themes.swift in Sources */,
+				E2E589FF25BDA9E900834728 /* LoginController.swift in Sources */,
+				E260842125C187E700FBEB60 /* ScrollViewConfig.swift in Sources */,
+				E2E589FB25BDA9E900834728 /* AppDelegate.swift in Sources */,
+				E2A615AD25BDC311009CF961 /* HexColors.swift in Sources */,
+				E2C3802C25C2BAB200463ABF /* AdaptiveResolution.swift in Sources */,
+				E2E589FD25BDA9E900834728 /* SceneDelegate.swift in Sources */,
+				E2799D8425C2EE2600FDC660 /* UpdateScreenWhenRotating.swift in Sources */,
+				E2E58A0525BDA9E900834728 /* Devium_iOS.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2E58A0C25BDA9EB00834728 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2E58A1525BDA9EB00834728 /* Devium_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2E58A1725BDA9EB00834728 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2E58A2025BDA9EB00834728 /* Devium_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2E58A1225BDA9EB00834728 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2E589F625BDA9E900834728 /* Mobi iOS */;
+			targetProxy = E2E58A1125BDA9EB00834728 /* PBXContainerItemProxy */;
+		};
+		E2E58A1D25BDA9EB00834728 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2E589F625BDA9E900834728 /* Mobi iOS */;
+			targetProxy = E2E58A1C25BDA9EB00834728 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E2E58A0025BDA9E900834728 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2E58A0125BDA9E900834728 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E2E58A0825BDA9EB00834728 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2E58A0925BDA9EB00834728 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E2E58A2225BDA9EB00834728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E2E58A2325BDA9EB00834728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E2E58A2525BDA9EB00834728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AE6DCA759359642B6E28052 /* Pods-Mobi iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Mobi iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Gijo.Devium-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E2E58A2625BDA9EB00834728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7701D44B312CD93D157630FD /* Pods-Mobi iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Mobi iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Gijo.Devium-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E2E58A2825BDA9EB00834728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 654A204F32611CFEE492F77A /* Pods-Mobi iOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Devium iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Gijo.Devium-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobi iOS.app/Mobi iOS";
+			};
+			name = Debug;
+		};
+		E2E58A2925BDA9EB00834728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B687A30C06E5970B481EAFB1 /* Pods-Mobi iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Devium iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Gijo.Devium-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobi iOS.app/Mobi iOS";
+			};
+			name = Release;
+		};
+		E2E58A2B25BDA9EB00834728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 232224E6687E10190BCCBCEF /* Pods-Mobi iOS-Mobi iOSUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Devium iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Gijo.Devium-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Devium iOS";
+			};
+			name = Debug;
+		};
+		E2E58A2C25BDA9EB00834728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8CB5925256E4C0B0141C5E2 /* Pods-Mobi iOS-Mobi iOSUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Devium iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Gijo.Devium-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Devium iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2E589F225BDA9E900834728 /* Build configuration list for PBXProject "Mobi iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2E58A2225BDA9EB00834728 /* Debug */,
+				E2E58A2325BDA9EB00834728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2E58A2425BDA9EB00834728 /* Build configuration list for PBXNativeTarget "Mobi iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2E58A2525BDA9EB00834728 /* Debug */,
+				E2E58A2625BDA9EB00834728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2E58A2725BDA9EB00834728 /* Build configuration list for PBXNativeTarget "Mobi iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2E58A2825BDA9EB00834728 /* Debug */,
+				E2E58A2925BDA9EB00834728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2E58A2A25BDA9EB00834728 /* Build configuration list for PBXNativeTarget "Mobi iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2E58A2B25BDA9EB00834728 /* Debug */,
+				E2E58A2C25BDA9EB00834728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2E58A0325BDA9E900834728 /* Devium_iOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2E58A0425BDA9E900834728 /* Devium_iOS.xcdatamodel */,
+			);
+			currentVersion = E2E58A0425BDA9E900834728 /* Devium_iOS.xcdatamodel */;
+			path = Devium_iOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E2E589EF25BDA9E900834728 /* Project object */;
+}
