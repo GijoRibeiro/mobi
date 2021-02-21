@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TopCollectionViewCell" customModule="Mobi_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="240"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Szc-8N-qZ3">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="240"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhi-4v-WIF">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="240"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wp-Rz-yop">
+                        <rect key="frame" x="16" y="160" width="109" height="33"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Main tag">
+                                <attributes>
+                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="28" name="Eina01-Bold"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icu-ma-KRO">
+                        <rect key="frame" x="16" y="203" width="61.5" height="21"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Subtitle">
+                                <attributes>
+                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="18" name="Eina01-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="8wp-Rz-yop" firstAttribute="leading" secondItem="Icu-ma-KRO" secondAttribute="leading" id="ADn-jC-WPf"/>
+                <constraint firstAttribute="bottom" secondItem="Dhi-4v-WIF" secondAttribute="bottom" id="FZ0-tr-EAj"/>
+                <constraint firstItem="Icu-ma-KRO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="TyR-GP-jKR"/>
+                <constraint firstItem="Dhi-4v-WIF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Xl8-is-pOR"/>
+                <constraint firstAttribute="bottom" secondItem="Icu-ma-KRO" secondAttribute="bottom" constant="16" id="aC3-Kg-sXX"/>
+                <constraint firstItem="Dhi-4v-WIF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kaQ-Qx-usg"/>
+                <constraint firstAttribute="trailing" secondItem="Dhi-4v-WIF" secondAttribute="trailing" id="km8-Jf-iVy"/>
+                <constraint firstItem="Icu-ma-KRO" firstAttribute="top" secondItem="8wp-Rz-yop" secondAttribute="bottom" constant="10" id="wL6-Wj-Mfj"/>
+            </constraints>
+            <size key="customSize" width="80" height="80"/>
+            <connections>
+                <outlet property="blackFade" destination="Dhi-4v-WIF" id="H8d-YC-tfX"/>
+                <outlet property="mainTag" destination="8wp-Rz-yop" id="vvB-IO-6Po"/>
+                <outlet property="originalPhoto" destination="Szc-8N-qZ3" id="0qd-Xw-alh"/>
+                <outlet property="subTags" destination="Icu-ma-KRO" id="Q8x-Zp-IPf"/>
+            </connections>
+            <point key="canvasLocation" x="43.478260869565219" y="85.714285714285708"/>
+        </collectionViewCell>
+    </objects>
+</document>

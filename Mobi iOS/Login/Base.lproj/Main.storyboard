@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,21 +13,23 @@
             <objects>
                 <viewController title="Login" id="BYZ-38-t0r" customClass="LoginController" customModule="Mobi_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mentoring-fliped.png" translatesAutoresizingMaskIntoConstraints="NO" id="uJe-lr-fXb">
-                                <rect key="frame" x="32" y="171" width="149" height="299"/>
+                                <rect key="frame" x="134" y="53" width="149" height="299"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="299" id="VsB-yy-Mh5"/>
+                                    <constraint firstAttribute="height" constant="299" id="VsB-yy-Mh5">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="240"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="149" id="csN-xu-Gq5"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Fqc-Tg-Zta">
-                                <rect key="frame" x="32" y="653" width="350" height="110"/>
+                                <rect key="frame" x="414" y="229" width="376" height="110"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RCA-bj-ltW">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="49"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="49"/>
                                         <color key="backgroundColor" systemColor="labelColor"/>
                                         <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                                         <state key="normal">
@@ -41,9 +43,12 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <segue destination="gEu-tY-wAb" kind="presentation" modalPresentationStyle="fullScreen" id="Tj7-iJ-Fp5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vsc-pB-jYZ">
-                                        <rect key="frame" x="0.0" y="61" width="350" height="49"/>
+                                        <rect key="frame" x="0.0" y="61" width="376" height="49"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Mail">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,22 +60,22 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing you agree Gijo's Terms of Services &amp; Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWd-Dk-QeY">
-                                <rect key="frame" x="32" y="820" width="350" height="48"/>
+                                <rect key="frame" x="32" y="374" width="832" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBu-mc-s7K" userLabel="Intro View">
-                                <rect key="frame" x="32" y="474" width="350" height="165"/>
+                                <rect key="frame" x="414" y="50" width="376" height="165"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="nXu-HG-XjA" userLabel="scrollView">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="165"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="165"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <viewLayoutGuide key="contentLayoutGuide" id="xHm-bV-hXn"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="uOp-Z6-oGG"/>
                                     </scrollView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Xe8-RS-Em0">
-                                        <rect key="frame" x="-38" y="137.66666666666663" width="121.33333333333333" height="27.333333333333343"/>
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Xe8-RS-Em0">
+                                        <rect key="frame" x="-38" y="137.66666666666666" width="121.33333333333333" height="27.333333333333343"/>
                                         <color key="pageIndicatorTintColor" systemColor="opaqueSeparatorColor"/>
                                         <color key="currentPageIndicatorTintColor" systemColor="labelColor"/>
                                         <connections>
@@ -114,9 +119,10 @@
                                 <variation key="heightClass=compact-widthClass=regular" constant="62"/>
                             </constraint>
                             <constraint firstItem="LWd-Dk-QeY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="nKF-u7-Cci"/>
-                            <constraint firstItem="Fqc-Tg-Zta" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="260" id="pJ8-is-Was">
+                            <constraint firstItem="Fqc-Tg-Zta" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="220" id="pJ8-is-Was">
                                 <variation key="heightClass=compact-widthClass=compact" constant="80"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="77"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="200"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
                             <constraint firstItem="GBu-mc-s7K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="ro1-8c-oWm">
@@ -131,7 +137,9 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="450"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="LWd-Dk-QeY" secondAttribute="trailing" constant="32" id="vgs-VN-edl"/>
-                            <constraint firstAttribute="bottom" secondItem="LWd-Dk-QeY" secondAttribute="bottom" constant="28" id="ypN-x0-V6K"/>
+                            <constraint firstAttribute="bottom" secondItem="LWd-Dk-QeY" secondAttribute="bottom" constant="16" id="ypN-x0-V6K">
+                                <variation key="heightClass=regular-widthClass=compact" constant="32"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -159,6 +167,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="lpK-rh-NPN"/>
                     <connections>
                         <outlet property="btnGoogleSignIn" destination="RCA-bj-ltW" id="VeL-6H-mWc"/>
                         <outlet property="btnMailSignIn" destination="Vsc-pB-jYZ" id="wp2-a0-fJc"/>
@@ -173,6 +182,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-220.863309352518" y="74.874371859296488"/>
+        </scene>
+        <!--Onboarding-->
+        <scene sceneID="2hR-5Y-klh">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="onboardVC" storyboardName="Onboarding" id="gEu-tY-wAb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="yv3-Df-Bwu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45W-CL-FZn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="327" y="74"/>
         </scene>
     </scenes>
     <resources>

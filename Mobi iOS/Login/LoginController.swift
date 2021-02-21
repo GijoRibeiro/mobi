@@ -10,8 +10,6 @@ import SwiftUI
 
 class LoginController: UIViewController {
     
-    var screenRoundness: CGFloat = 12
-    
     @IBOutlet var btnGoogleSignIn: UIButton!
     @IBOutlet var btnMailSignIn: UIButton!
     @IBOutlet var privacyWarning: UILabel!
@@ -27,10 +25,16 @@ class LoginController: UIViewController {
         scrollView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         layoutSetUp()
+        userAlreadyLoggedIn()
     }
 }
 
@@ -45,13 +49,28 @@ extension LoginController {
         configSliders()
     }
     
+    func userAlreadyLoggedIn() {
+        
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "DashboardStoryboard", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "dashboardTC")
+            newViewController.modalPresentationStyle = .fullScreen
+            self.present(newViewController, animated: true, completion: nil)
+            
+            UserDefaults.standard.set(true, forKey: "isLoggedIn")
+            UserDefaults.standard.synchronize()
+        }
+        
+    }
+    
     func configPrivacyWarning() {
         labelFont(type: privacyWarning, weight: "Regular", fontSize: 14)
         
     }
     
     func confingMailSignIn() {
-        btnMailSignIn.layer.cornerRadius = screenRoundness
+        btnMailSignIn.layer.cornerRadius = appRoundness
         btnMailSignIn.translatesAutoresizingMaskIntoConstraints = false
         btnMailSignIn.setTitle("Got it...again", for: .normal)
         btnMailSignIn.layer.borderWidth = 0.5
@@ -66,7 +85,7 @@ extension LoginController {
         let image = UIImage(named: googleLogo)
         let imageView = UIImageView(image: image!)
         
-        btnGoogleSignIn.layer.cornerRadius = screenRoundness
+        btnGoogleSignIn.layer.cornerRadius = appRoundness
         btnGoogleSignIn.setTitle("Sign in with Google", for: .normal)
         btnGoogleSignIn.titleLabel?.font = UIFont(name: "Eina01-Bold", size: 16)
         
@@ -97,19 +116,5 @@ extension LoginController {
         mainLabel.adjustsFontSizeToFitWidth = true
         mainLabel.textColor = color
         yourView.addSubview(mainLabel)
-    }
-    
-    func labelFont (type: UILabel, weight: String, fontSize: CGFloat) {
-        if weight == "Regular" {type.font = UIFont(name: "Eina01-Regular", size: fontSize)}
-        if weight == "Bold" {type.font = UIFont(name: "Eina01-Bold", size: fontSize)}
-        if weight == "Light" {type.font = UIFont(name: "Eina01-Light", size: fontSize)}
-        if weight == "Semibold" {type.font = UIFont(name: "Eina01-SemiBold", size: fontSize)}
-    }
-    
-    func fieldFont (type: UITextField, weight: String, fontSize: CGFloat) {
-        if weight == "Regular" {type.font = UIFont(name: "Eina01-Regular", size: fontSize)}
-        if weight == "Bold" {type.font = UIFont(name: "Eina01-Bold", size: fontSize)}
-        if weight == "Light" {type.font = UIFont(name: "Eina01-Light", size: fontSize)}
-        if weight == "Semibold" {type.font = UIFont(name: "Eina01-SemiBold", size: fontSize)}
     }
 }

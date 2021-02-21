@@ -5,7 +5,7 @@ target 'Mobi iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-#  pod 'BayKit', '~> 1.0.1'
+  pod 'SDWebImage', '~> 5.0'
 
   target 'Mobi iOSTests' do
     inherit! :search_paths
