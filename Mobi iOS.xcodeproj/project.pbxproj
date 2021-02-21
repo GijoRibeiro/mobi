@@ -10,14 +10,30 @@
 		06E921F8F9F90B590891586E /* Pods_Mobi_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8943C474FA5067584F4F0666 /* Pods_Mobi_iOS.framework */; };
 		2604137C964D1267AFEF365C /* Pods_Mobi_iOS_Mobi_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F07ACC48F2CBD765AEA5D560 /* Pods_Mobi_iOS_Mobi_iOSUITests.framework */; };
 		A29003CB4A379B0F07F670BA /* Pods_Mobi_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31862C638940F7855985385 /* Pods_Mobi_iOSTests.framework */; };
+		E234464425D2ACEA00AB83D9 /* DashboardStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E234464325D2ACEA00AB83D9 /* DashboardStoryboard.storyboard */; };
+		E234464C25D2B11A00AB83D9 /* DashboardRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234464B25D2B11A00AB83D9 /* DashboardRoot.swift */; };
+		E234465425D2B16C00AB83D9 /* DashboardRootNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234465325D2B16C00AB83D9 /* DashboardRootNC.swift */; };
+		E234465D25D2D78300AB83D9 /* UpdateSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234465C25D2D78300AB83D9 /* UpdateSlides.swift */; };
+		E234466825D2DF1000AB83D9 /* PrintConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234466725D2DF1000AB83D9 /* PrintConstraints.swift */; };
+		E234466E25D3F90500AB83D9 /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234466C25D3F90400AB83D9 /* TopCollectionViewCell.swift */; };
+		E234466F25D3F90500AB83D9 /* TopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E234466D25D3F90400AB83D9 /* TopCollectionViewCell.xib */; };
+		E24E5AC425CEBC66008C426B /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24E5AC325CEBC66008C426B /* Onboarding.swift */; };
+		E24E5AC925CEBCD3008C426B /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24E5AC825CEBCD3008C426B /* Onboarding.storyboard */; };
+		E24E5ACD25CEBF98008C426B /* mentoring-fliped.png in Resources */ = {isa = PBXBuildFile; fileRef = E24E5ACF25CEBF98008C426B /* mentoring-fliped.png */; };
 		E24E681525CDBA5000E75BD2 /* handstouching.png in Resources */ = {isa = PBXBuildFile; fileRef = E24E681425CDBA5000E75BD2 /* handstouching.png */; };
-		E24E682A25CDBBA100E75BD2 /* mentoring.png in Resources */ = {isa = PBXBuildFile; fileRef = E24E682925CDBBA100E75BD2 /* mentoring.png */; };
-		E24E682F25CDBC8300E75BD2 /* mentoring-fliped.png in Resources */ = {isa = PBXBuildFile; fileRef = E24E682E25CDBC8300E75BD2 /* mentoring-fliped.png */; };
+		E24EC2F025D8AAC0002DF681 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = E24EC2EF25D8AAC0002DF681 /* heart.png */; };
 		E260841125C0CF0F00FBEB60 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E260841025C0CF0F00FBEB60 /* logo.png */; };
 		E260841625C0CFDA00FBEB60 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = E260841525C0CFDA00FBEB60 /* logo2.png */; };
 		E260841B25C17C0900FBEB60 /* LogoFruit.png in Resources */ = {isa = PBXBuildFile; fileRef = E260841A25C17C0900FBEB60 /* LogoFruit.png */; };
 		E260842125C187E700FBEB60 /* ScrollViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260842025C187E700FBEB60 /* ScrollViewConfig.swift */; };
 		E260842F25C1989500FBEB60 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260842E25C1989500FBEB60 /* Themes.swift */; };
+		E26DF67F25D0091900327981 /* yourgrowth2.png in Resources */ = {isa = PBXBuildFile; fileRef = E26DF67E25D0091900327981 /* yourgrowth2.png */; };
+		E26DF68925D01B1C00327981 /* mediaanalyse.png in Resources */ = {isa = PBXBuildFile; fileRef = E26DF68825D01B1C00327981 /* mediaanalyse.png */; };
+		E26DF69725D01BDB00327981 /* cooler.png in Resources */ = {isa = PBXBuildFile; fileRef = E26DF69625D01BDB00327981 /* cooler.png */; };
+		E26DF69C25D0497B00327981 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E26DF69B25D0497B00327981 /* arrow.png */; };
+		E26DF6A125D0498E00327981 /* Vectorwhite.png in Resources */ = {isa = PBXBuildFile; fileRef = E26DF6A025D0498E00327981 /* Vectorwhite.png */; };
+		E26DF6A625D04D1200327981 /* arrowdots.png in Resources */ = {isa = PBXBuildFile; fileRef = E26DF6A525D04D1200327981 /* arrowdots.png */; };
+		E26DF6AB25D04DAD00327981 /* arrowplay.png in Resources */ = {isa = PBXBuildFile; fileRef = E26DF6AA25D04DAD00327981 /* arrowplay.png */; };
 		E2799D8425C2EE2600FDC660 /* UpdateScreenWhenRotating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2799D8325C2EE2600FDC660 /* UpdateScreenWhenRotating.swift */; };
 		E2A615AD25BDC311009CF961 /* HexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A615AC25BDC311009CF961 /* HexColors.swift */; };
 		E2A615D625BDD387009CF961 /* Eina03-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615B625BDD386009CF961 /* Eina03-RegularItalic.ttf */; };
@@ -53,7 +69,7 @@
 		E2A615F425BDD387009CF961 /* Eina01-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D425BDD387009CF961 /* Eina01-Regular.ttf */; };
 		E2A615F525BDD387009CF961 /* Eina01-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D525BDD387009CF961 /* Eina01-SemiboldItalic.ttf */; };
 		E2A615FB25BE014E009CF961 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A615FA25BE014D009CF961 /* google.png */; };
-		E2C3802C25C2BAB200463ABF /* AdaptiveResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3802B25C2BAB200463ABF /* AdaptiveResolution.swift */; };
+		E2C3802C25C2BAB200463ABF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3802B25C2BAB200463ABF /* Helpers.swift */; };
 		E2E589FB25BDA9E900834728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E589FA25BDA9E900834728 /* AppDelegate.swift */; };
 		E2E589FD25BDA9E900834728 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E589FC25BDA9E900834728 /* SceneDelegate.swift */; };
 		E2E589FF25BDA9E900834728 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E589FE25BDA9E900834728 /* LoginController.swift */; };
@@ -97,14 +113,30 @@
 		8943C474FA5067584F4F0666 /* Pods_Mobi_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobi_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8CB5925256E4C0B0141C5E2 /* Pods-Mobi iOS-Mobi iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi iOS-Mobi iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Mobi iOS-Mobi iOSUITests/Pods-Mobi iOS-Mobi iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B687A30C06E5970B481EAFB1 /* Pods-Mobi iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Mobi iOSTests/Pods-Mobi iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		E234464325D2ACEA00AB83D9 /* DashboardStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashboardStoryboard.storyboard; sourceTree = "<group>"; };
+		E234464B25D2B11A00AB83D9 /* DashboardRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRoot.swift; sourceTree = "<group>"; };
+		E234465325D2B16C00AB83D9 /* DashboardRootNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRootNC.swift; sourceTree = "<group>"; };
+		E234465C25D2D78300AB83D9 /* UpdateSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSlides.swift; sourceTree = "<group>"; };
+		E234466725D2DF1000AB83D9 /* PrintConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintConstraints.swift; sourceTree = "<group>"; };
+		E234466C25D3F90400AB83D9 /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCollectionViewCell.swift; sourceTree = "<group>"; };
+		E234466D25D3F90400AB83D9 /* TopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCollectionViewCell.xib; sourceTree = "<group>"; };
+		E24E5AC325CEBC66008C426B /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		E24E5AC825CEBCD3008C426B /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		E24E5ACE25CEBF98008C426B /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = "Base.lproj/mentoring-fliped.png"; sourceTree = "<group>"; };
 		E24E681425CDBA5000E75BD2 /* handstouching.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handstouching.png; sourceTree = "<group>"; };
-		E24E682925CDBBA100E75BD2 /* mentoring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mentoring.png; sourceTree = "<group>"; };
-		E24E682E25CDBC8300E75BD2 /* mentoring-fliped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mentoring-fliped.png"; sourceTree = "<group>"; };
+		E24EC2EF25D8AAC0002DF681 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		E260841025C0CF0F00FBEB60 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		E260841525C0CFDA00FBEB60 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
 		E260841A25C17C0900FBEB60 /* LogoFruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoFruit.png; sourceTree = "<group>"; };
 		E260842025C187E700FBEB60 /* ScrollViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewConfig.swift; sourceTree = "<group>"; };
 		E260842E25C1989500FBEB60 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		E26DF67E25D0091900327981 /* yourgrowth2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yourgrowth2.png; sourceTree = "<group>"; };
+		E26DF68825D01B1C00327981 /* mediaanalyse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mediaanalyse.png; sourceTree = "<group>"; };
+		E26DF69625D01BDB00327981 /* cooler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooler.png; sourceTree = "<group>"; };
+		E26DF69B25D0497B00327981 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		E26DF6A025D0498E00327981 /* Vectorwhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vectorwhite.png; sourceTree = "<group>"; };
+		E26DF6A525D04D1200327981 /* arrowdots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowdots.png; sourceTree = "<group>"; };
+		E26DF6AA25D04DAD00327981 /* arrowplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowplay.png; sourceTree = "<group>"; };
 		E2799D8325C2EE2600FDC660 /* UpdateScreenWhenRotating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateScreenWhenRotating.swift; sourceTree = "<group>"; };
 		E2A615AC25BDC311009CF961 /* HexColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColors.swift; sourceTree = "<group>"; };
 		E2A615B625BDD386009CF961 /* Eina03-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina03-RegularItalic.ttf"; sourceTree = "<group>"; };
@@ -140,7 +172,7 @@
 		E2A615D425BDD387009CF961 /* Eina01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-Regular.ttf"; sourceTree = "<group>"; };
 		E2A615D525BDD387009CF961 /* Eina01-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		E2A615FA25BE014D009CF961 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
-		E2C3802B25C2BAB200463ABF /* AdaptiveResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveResolution.swift; sourceTree = "<group>"; };
+		E2C3802B25C2BAB200463ABF /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		E2E589F725BDA9E900834728 /* Mobi iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobi iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E589FA25BDA9E900834728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2E589FC25BDA9E900834728 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +250,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E234463F25D2ACD800AB83D9 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				E234465325D2B16C00AB83D9 /* DashboardRootNC.swift */,
+				E234464B25D2B11A00AB83D9 /* DashboardRoot.swift */,
+				E234464325D2ACEA00AB83D9 /* DashboardStoryboard.storyboard */,
+				E234467325D3F91300AB83D9 /* Top Collection */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		E234465B25D2D77000AB83D9 /* Slides */ = {
+			isa = PBXGroup;
+			children = (
+				E234465C25D2D78300AB83D9 /* UpdateSlides.swift */,
+			);
+			path = Slides;
+			sourceTree = "<group>";
+		};
+		E234467325D3F91300AB83D9 /* Top Collection */ = {
+			isa = PBXGroup;
+			children = (
+				E234466C25D3F90400AB83D9 /* TopCollectionViewCell.swift */,
+				E234466D25D3F90400AB83D9 /* TopCollectionViewCell.xib */,
+			);
+			path = "Top Collection";
+			sourceTree = "<group>";
+		};
+		E24E5AC225CEBC4B008C426B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E234465B25D2D77000AB83D9 /* Slides */,
+				E24E5AC325CEBC66008C426B /* Onboarding.swift */,
+				E24E5AC825CEBCD3008C426B /* Onboarding.storyboard */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		E260841F25C187B100FBEB60 /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,7 +302,8 @@
 			children = (
 				E2A615AC25BDC311009CF961 /* HexColors.swift */,
 				E260842E25C1989500FBEB60 /* Themes.swift */,
-				E2C3802B25C2BAB200463ABF /* AdaptiveResolution.swift */,
+				E2C3802B25C2BAB200463ABF /* Helpers.swift */,
+				E234466725D2DF1000AB83D9 /* PrintConstraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -287,8 +358,15 @@
 		E2A615F925BE0134009CF961 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				E24E682E25CDBC8300E75BD2 /* mentoring-fliped.png */,
-				E24E682925CDBBA100E75BD2 /* mentoring.png */,
+				E24EC2EF25D8AAC0002DF681 /* heart.png */,
+				E26DF6AA25D04DAD00327981 /* arrowplay.png */,
+				E26DF6A525D04D1200327981 /* arrowdots.png */,
+				E26DF69B25D0497B00327981 /* arrow.png */,
+				E26DF6A025D0498E00327981 /* Vectorwhite.png */,
+				E26DF69625D01BDB00327981 /* cooler.png */,
+				E26DF68825D01B1C00327981 /* mediaanalyse.png */,
+				E26DF67E25D0091900327981 /* yourgrowth2.png */,
+				E24E5ACF25CEBF98008C426B /* mentoring-fliped.png */,
 				E24E681425CDBA5000E75BD2 /* handstouching.png */,
 				E2F8C2C125C32DEE00BE9736 /* Open Doodles.png */,
 				E260841525C0CFDA00FBEB60 /* logo2.png */,
@@ -339,6 +417,8 @@
 				E2A615AB25BDC302009CF961 /* Extensions */,
 				E2E589FA25BDA9E900834728 /* AppDelegate.swift */,
 				E2E589FC25BDA9E900834728 /* SceneDelegate.swift */,
+				E234463F25D2ACD800AB83D9 /* Dashboard */,
+				E24E5AC225CEBC4B008C426B /* Onboarding */,
 				E2C0710425C01C630004BB28 /* Login */,
 				E2E58A0625BDA9EB00834728 /* Assets.xcassets */,
 				E2E58A0825BDA9EB00834728 /* LaunchScreen.storyboard */,
@@ -377,6 +457,7 @@
 				E2E589F325BDA9E900834728 /* Sources */,
 				E2E589F425BDA9E900834728 /* Frameworks */,
 				E2E589F525BDA9E900834728 /* Resources */,
+				ED3D8881DBE42253DC5E219F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -414,6 +495,7 @@
 				E2E58A1725BDA9EB00834728 /* Sources */,
 				E2E58A1825BDA9EB00834728 /* Frameworks */,
 				E2E58A1925BDA9EB00834728 /* Resources */,
+				898703352F1EFE4BCC0C62F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -474,21 +556,28 @@
 			files = (
 				E2A615F525BDD387009CF961 /* Eina01-SemiboldItalic.ttf in Resources */,
 				E2A615D825BDD387009CF961 /* Eina04-SemiBold.ttf in Resources */,
-				E24E682F25CDBC8300E75BD2 /* mentoring-fliped.png in Resources */,
+				E24E5ACD25CEBF98008C426B /* mentoring-fliped.png in Resources */,
 				E2A615EC25BDD387009CF961 /* Eina01-RegularItalic.ttf in Resources */,
 				E2A615F325BDD387009CF961 /* Eina03-SemiboldItalic.ttf in Resources */,
 				E2A615E525BDD387009CF961 /* Eina04-BoldItalic.ttf in Resources */,
 				E2A615E325BDD387009CF961 /* Eina02-SemiBold.ttf in Resources */,
+				E26DF69725D01BDB00327981 /* cooler.png in Resources */,
 				E2A615EE25BDD387009CF961 /* Eina02-Bold.ttf in Resources */,
 				E2A615E725BDD387009CF961 /* Eina01-SemiBold.ttf in Resources */,
 				E2A615EA25BDD387009CF961 /* Eina02-LightItalic.ttf in Resources */,
 				E2A615DE25BDD387009CF961 /* Eina03-LightItalic.ttf in Resources */,
+				E26DF67F25D0091900327981 /* yourgrowth2.png in Resources */,
+				E26DF6AB25D04DAD00327981 /* arrowplay.png in Resources */,
+				E24E5AC925CEBCD3008C426B /* Onboarding.storyboard in Resources */,
 				E24E681525CDBA5000E75BD2 /* handstouching.png in Resources */,
 				E2A615DF25BDD387009CF961 /* Eina03-SemiBold.ttf in Resources */,
 				E2A615DC25BDD387009CF961 /* Eina01-BoldItalic.ttf in Resources */,
+				E24EC2F025D8AAC0002DF681 /* heart.png in Resources */,
+				E234464425D2ACEA00AB83D9 /* DashboardStoryboard.storyboard in Resources */,
 				E2A615D725BDD387009CF961 /* Eina04-Bold.ttf in Resources */,
 				E2E58A0A25BDA9EB00834728 /* LaunchScreen.storyboard in Resources */,
 				E2A615E025BDD387009CF961 /* Eina04-Light.ttf in Resources */,
+				E26DF69C25D0497B00327981 /* arrow.png in Resources */,
 				E2A615DD25BDD387009CF961 /* Eina02-BoldItalic.ttf in Resources */,
 				E2A615F225BDD387009CF961 /* Eina04-LightItalic.ttf in Resources */,
 				E2A615E225BDD387009CF961 /* Eina02-RegularItalic.ttf in Resources */,
@@ -501,19 +590,22 @@
 				E2A615E125BDD387009CF961 /* Eina04-SemiboldItalic.ttf in Resources */,
 				E2A615E925BDD387009CF961 /* Eina02-Light.ttf in Resources */,
 				E260841625C0CFDA00FBEB60 /* logo2.png in Resources */,
+				E26DF68925D01B1C00327981 /* mediaanalyse.png in Resources */,
 				E2A615DA25BDD387009CF961 /* Eina03-BoldItalic.ttf in Resources */,
-				E24E682A25CDBBA100E75BD2 /* mentoring.png in Resources */,
 				E2A615EF25BDD387009CF961 /* Eina02-Regular.ttf in Resources */,
 				E2E58A0725BDA9EB00834728 /* Assets.xcassets in Resources */,
 				E2A615E425BDD387009CF961 /* Eina04-Regular.ttf in Resources */,
+				E26DF6A125D0498E00327981 /* Vectorwhite.png in Resources */,
 				E2F8C2C225C32DEE00BE9736 /* Open Doodles.png in Resources */,
 				E2A615E825BDD387009CF961 /* Eina01-LightItalic.ttf in Resources */,
 				E2A615ED25BDD387009CF961 /* Eina02-SemiboldItalic.ttf in Resources */,
+				E234466F25D3F90500AB83D9 /* TopCollectionViewCell.xib in Resources */,
 				E2E58A0225BDA9E900834728 /* Main.storyboard in Resources */,
 				E260841125C0CF0F00FBEB60 /* logo.png in Resources */,
 				E2A615E625BDD387009CF961 /* Eina01-Bold.ttf in Resources */,
 				E2A615FB25BE014E009CF961 /* google.png in Resources */,
 				E2A615F025BDD387009CF961 /* Eina01-Light.ttf in Resources */,
+				E26DF6A625D04D1200327981 /* arrowdots.png in Resources */,
 				E2A615F125BDD387009CF961 /* Eina03-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,6 +647,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		898703352F1EFE4BCC0C62F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS-Mobi iOSUITests/Pods-Mobi iOS-Mobi iOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS-Mobi iOSUITests/Pods-Mobi iOS-Mobi iOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS-Mobi iOSUITests/Pods-Mobi iOS-Mobi iOSUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BC93F79F0F4761E57938E74C /* [CP] Check Pods Manifest.lock */ = {
@@ -601,6 +710,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ED3D8881DBE42253DC5E219F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS/Pods-Mobi iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS/Pods-Mobi iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS/Pods-Mobi iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -609,12 +735,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E260842F25C1989500FBEB60 /* Themes.swift in Sources */,
+				E234465425D2B16C00AB83D9 /* DashboardRootNC.swift in Sources */,
 				E2E589FF25BDA9E900834728 /* LoginController.swift in Sources */,
+				E24E5AC425CEBC66008C426B /* Onboarding.swift in Sources */,
+				E234465D25D2D78300AB83D9 /* UpdateSlides.swift in Sources */,
 				E260842125C187E700FBEB60 /* ScrollViewConfig.swift in Sources */,
 				E2E589FB25BDA9E900834728 /* AppDelegate.swift in Sources */,
 				E2A615AD25BDC311009CF961 /* HexColors.swift in Sources */,
-				E2C3802C25C2BAB200463ABF /* AdaptiveResolution.swift in Sources */,
+				E234466825D2DF1000AB83D9 /* PrintConstraints.swift in Sources */,
+				E2C3802C25C2BAB200463ABF /* Helpers.swift in Sources */,
+				E234464C25D2B11A00AB83D9 /* DashboardRoot.swift in Sources */,
 				E2E589FD25BDA9E900834728 /* SceneDelegate.swift in Sources */,
+				E234466E25D3F90500AB83D9 /* TopCollectionViewCell.swift in Sources */,
 				E2799D8425C2EE2600FDC660 /* UpdateScreenWhenRotating.swift in Sources */,
 				E2E58A0525BDA9E900834728 /* Devium_iOS.xcdatamodeld in Sources */,
 			);
@@ -652,6 +784,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E24E5ACF25CEBF98008C426B /* mentoring-fliped.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E24E5ACE25CEBF98008C426B /* Base */,
+			);
+			name = "mentoring-fliped.png";
+			sourceTree = "<group>";
+		};
 		E2E58A0025BDA9E900834728 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -794,6 +934,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X8F237SM25;
 				INFOPLIST_FILE = "Mobi iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -813,6 +954,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X8F237SM25;
 				INFOPLIST_FILE = "Mobi iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
