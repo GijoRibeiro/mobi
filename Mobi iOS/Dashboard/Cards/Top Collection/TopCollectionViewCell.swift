@@ -14,6 +14,7 @@ class TopCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var blackFade: UIView!
     @IBOutlet weak var subTags: UILabel!
     @IBOutlet weak var mainTag: UILabel!
+    @IBOutlet weak var bottomContainer: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
