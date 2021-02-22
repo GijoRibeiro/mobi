@@ -23,11 +23,19 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     @IBOutlet weak var topPhotosLabel: UILabel!
     @IBOutlet weak var blurShadow: UIImageView!
     @IBOutlet weak var postTodayLabel: UILabel!
-    
+    @IBOutlet weak var customNavBar: UIView!
+    @IBOutlet weak var navBarHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerBeforeAfterShadow: UIImageView!
     @IBOutlet weak var containerBeforeAfter: UIView!
     @IBOutlet weak var afterPhoto: UIImageView!
     @IBOutlet weak var beforePhoto: UIImageView!
+    
+    var lastContentOffset: CGFloat = 0
+    
+    //navbar layout
+    var customNavBarPro = UIView()
+    var profilePicNavBar = UIImageView()
+    var welcomeLabelNavBar = UILabel()
     
     let loadingIndicator = UIActivityIndicatorView()
     var images:[UIImage] = []
@@ -45,6 +53,22 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        welcomeLabelNavBar.text = "Large Title"
+        welcomeLabelNavBar.textColor = .black
+        welcomeLabelNavBar.textAlignment = .left
+        welcomeLabelNavBar.frame = CGRect(x: 20, y: 75, width: 200, height: 40)
+        labelFont(type: welcomeLabelNavBar, weight: "Bold", fontSize: 32)
+        
+        profilePicNavBar.image = UIImage(named: "userImage3.png")
+        profilePicNavBar.layer.cornerRadius = 16
+        profilePicNavBar.clipsToBounds = true
+        
+        self.navigationController?.navigationBar.addSubview(customNavBarPro)
+        self.navigationController?.navigationBar.addSubview(welcomeLabelNavBar)
+        self.navigationController?.navigationBar.addSubview(profilePicNavBar)
+        
+        minimizeNavBar()
         
         mainViewContainer.delegate = self
         
@@ -108,11 +132,13 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
             print("Found a face! Adding to the face folder.")
             return true
         }
-        
         return false
     }
     
     func selectFacePhotos(runAfterLoop: () -> ()) {
+        
+        beforePhoto.sd_setImage(with: faceUrl, placeholderImage: UIImage(named: "placeholder.png"))
+        
         for element in imagesToPost {
             if searchForFaceImage(photo: element) == true {
                 imagesWithFaces += [element]
@@ -149,17 +175,50 @@ extension dashboardRootVC {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         minimizeNavBar()
+        
     }
     
     func minimizeNavBar() {
         
         if (self.navigationController?.navigationBar.frame.height)! > 80 {
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.4) {
                 self.subTitleLabel.alpha = 1
             }
         } else {
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.4) {
                 self.subTitleLabel.alpha = 0.0
+            }
+        }
+        
+        if (self.navigationController?.navigationBar.frame.height)! > 80 {
+            UIView.animate(withDuration: 0.2) {
+//                expanded
+                self.customNavBarPro.frame = CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.width)!, height: 210)
+                self.customNavBarPro.backgroundColor = .white
+                self.customNavBarPro.layer.shadowOpacity = 0.0
+                
+                self.welcomeLabelNavBar.frame = CGRect(x: 20, y: (self.navigationController?.navigationBar.frame.height)! / 0.6, width: 200, height: 40)
+                labelFont(type: self.welcomeLabelNavBar, weight: "Bold", fontSize: 32)
+                
+                self.profilePicNavBar.alpha = 1.0
+                self.profilePicNavBar.frame = CGRect(x: 20, y: self.welcomeLabelNavBar.frame.minY - self.welcomeLabelNavBar.frame.height - 60 , width: 60, height: 60)
+            }
+        } else {
+//            minimized
+            UIView.animate(withDuration: 0.2) {
+                
+                self.customNavBarPro.frame = CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.width)!, height: 65)
+                self.customNavBarPro.backgroundColor = .white
+                self.customNavBarPro.layer.shadowColor = UIColor.black.cgColor
+                self.customNavBarPro.layer.shadowOpacity = 0.05
+                self.customNavBarPro.layer.shadowOffset = CGSize(width: 0, height: 24)
+                self.customNavBarPro.layer.shadowRadius = 12
+                
+                self.profilePicNavBar.alpha = 0.0
+                
+                labelFont(type: self.welcomeLabelNavBar, weight: "Bold", fontSize: 24)
+                self.welcomeLabelNavBar.frame = CGRect(x: 20, y: (self.navigationController?.navigationBar.frame.height)! / 2.4, width: 200, height: 40)
+                
             }
         }
     }
@@ -170,6 +229,8 @@ extension dashboardRootVC {
         subTitleLabel.textAlignment = .left
         subTitleLabel.frame = CGRect(x: 20, y: 10, width: 200, height: 40)
         labelFont(type: subTitleLabel, weight: "Regular", fontSize: 16)
+        
+        
         
         self.navigationController?.navigationBar.addSubview(subTitleLabel)
     }
@@ -190,22 +251,22 @@ extension dashboardRootVC {
     
     func addTrendyImage() {
         
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.trendyTapped(sender:)))
-        trendImage.addGestureRecognizer(tapGR)
-        trendImage.isUserInteractionEnabled = true
-        
-        //container
-        trendImageContainer.backgroundColor = supportColor
-        trendImageContainer.layer.cornerRadius = appRoundness
-        trendImageContainer.clipsToBounds = true
-        
-        //pic
-        trendImage.clipsToBounds = true
-        trendImage.layer.cornerRadius = appRoundness
-        
-        //fetch
-        trendImage.load(url: fileUrl!)
-        blurShadow.load(url: fileUrl!)
+//        let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.trendyTapped(sender:)))
+//        trendImage.addGestureRecognizer(tapGR)
+//        trendImage.isUserInteractionEnabled = true
+//
+//        //container
+//        trendImageContainer.backgroundColor = supportColor
+//        trendImageContainer.layer.cornerRadius = appRoundness
+//        trendImageContainer.clipsToBounds = true
+//
+//        //pic
+//        trendImage.clipsToBounds = true
+//        trendImage.layer.cornerRadius = appRoundness
+//
+//        //fetch
+//        trendImage.load(url: fileUrl!)
+//        blurShadow.load(url: fileUrl!)
     }
     
     func postTodayLayout() {
@@ -265,7 +326,7 @@ extension dashboardRootVC {
     
     func fetchPhotos() {
         
-        let photosToFetch = 130
+        let photosToFetch = 30
         
         // Sort the images by descending creation date and fetch the first 3
         let fetchOptions = PHFetchOptions()

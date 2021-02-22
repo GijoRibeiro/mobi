@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		E234466825D2DF1000AB83D9 /* PrintConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234466725D2DF1000AB83D9 /* PrintConstraints.swift */; };
 		E234466E25D3F90500AB83D9 /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234466C25D3F90400AB83D9 /* TopCollectionViewCell.swift */; };
 		E234466F25D3F90500AB83D9 /* TopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E234466D25D3F90400AB83D9 /* TopCollectionViewCell.xib */; };
+		E23C67CB25E30126008CD441 /* mainBattleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E23C67CA25E30126008CD441 /* mainBattleController.xib */; };
+		E23C67D025E3033E008CD441 /* mainbattlecontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C67CF25E3033E008CD441 /* mainbattlecontroller.swift */; };
 		E24E5AC425CEBC66008C426B /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24E5AC325CEBC66008C426B /* Onboarding.swift */; };
 		E24E5AC925CEBCD3008C426B /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24E5AC825CEBCD3008C426B /* Onboarding.storyboard */; };
 		E24E5ACD25CEBF98008C426B /* mentoring-fliped.png in Resources */ = {isa = PBXBuildFile; fileRef = E24E5ACF25CEBF98008C426B /* mentoring-fliped.png */; };
@@ -35,6 +37,9 @@
 		E26DF6A625D04D1200327981 /* arrowdots.png in Resources */ = {isa = PBXBuildFile; fileRef = E26DF6A525D04D1200327981 /* arrowdots.png */; };
 		E26DF6AB25D04DAD00327981 /* arrowplay.png in Resources */ = {isa = PBXBuildFile; fileRef = E26DF6AA25D04DAD00327981 /* arrowplay.png */; };
 		E2799D8425C2EE2600FDC660 /* UpdateScreenWhenRotating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2799D8325C2EE2600FDC660 /* UpdateScreenWhenRotating.swift */; };
+		E288998625E478BF00282A22 /* userImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E288998525E478BF00282A22 /* userImage.png */; };
+		E288998B25E4793B00282A22 /* userImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = E288998A25E4793B00282A22 /* userImage2.png */; };
+		E288999025E479D700282A22 /* userImage3.png in Resources */ = {isa = PBXBuildFile; fileRef = E288998F25E479D700282A22 /* userImage3.png */; };
 		E2A615AD25BDC311009CF961 /* HexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A615AC25BDC311009CF961 /* HexColors.swift */; };
 		E2A615D625BDD387009CF961 /* Eina03-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615B625BDD386009CF961 /* Eina03-RegularItalic.ttf */; };
 		E2A615D725BDD387009CF961 /* Eina04-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615B725BDD386009CF961 /* Eina04-Bold.ttf */; };
@@ -120,6 +125,8 @@
 		E234466725D2DF1000AB83D9 /* PrintConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintConstraints.swift; sourceTree = "<group>"; };
 		E234466C25D3F90400AB83D9 /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCollectionViewCell.swift; sourceTree = "<group>"; };
 		E234466D25D3F90400AB83D9 /* TopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCollectionViewCell.xib; sourceTree = "<group>"; };
+		E23C67CA25E30126008CD441 /* mainBattleController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mainBattleController.xib; sourceTree = "<group>"; };
+		E23C67CF25E3033E008CD441 /* mainbattlecontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainbattlecontroller.swift; sourceTree = "<group>"; };
 		E24E5AC325CEBC66008C426B /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		E24E5AC825CEBCD3008C426B /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		E24E5ACE25CEBF98008C426B /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = "Base.lproj/mentoring-fliped.png"; sourceTree = "<group>"; };
@@ -138,6 +145,9 @@
 		E26DF6A525D04D1200327981 /* arrowdots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowdots.png; sourceTree = "<group>"; };
 		E26DF6AA25D04DAD00327981 /* arrowplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowplay.png; sourceTree = "<group>"; };
 		E2799D8325C2EE2600FDC660 /* UpdateScreenWhenRotating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateScreenWhenRotating.swift; sourceTree = "<group>"; };
+		E288998525E478BF00282A22 /* userImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userImage.png; sourceTree = "<group>"; };
+		E288998A25E4793B00282A22 /* userImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userImage2.png; sourceTree = "<group>"; };
+		E288998F25E479D700282A22 /* userImage3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userImage3.png; sourceTree = "<group>"; };
 		E2A615AC25BDC311009CF961 /* HexColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColors.swift; sourceTree = "<group>"; };
 		E2A615B625BDD386009CF961 /* Eina03-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina03-RegularItalic.ttf"; sourceTree = "<group>"; };
 		E2A615B725BDD386009CF961 /* Eina04-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina04-Bold.ttf"; sourceTree = "<group>"; };
@@ -254,9 +264,9 @@
 			isa = PBXGroup;
 			children = (
 				E234465325D2B16C00AB83D9 /* DashboardRootNC.swift */,
+				E23C67C825E300FC008CD441 /* Cards */,
 				E234464B25D2B11A00AB83D9 /* DashboardRoot.swift */,
 				E234464325D2ACEA00AB83D9 /* DashboardStoryboard.storyboard */,
-				E234467325D3F91300AB83D9 /* Top Collection */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -276,6 +286,24 @@
 				E234466D25D3F90400AB83D9 /* TopCollectionViewCell.xib */,
 			);
 			path = "Top Collection";
+			sourceTree = "<group>";
+		};
+		E23C67C825E300FC008CD441 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				E234467325D3F91300AB83D9 /* Top Collection */,
+				E23C67C925E30105008CD441 /* Main Battle */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		E23C67C925E30105008CD441 /* Main Battle */ = {
+			isa = PBXGroup;
+			children = (
+				E23C67CA25E30126008CD441 /* mainBattleController.xib */,
+				E23C67CF25E3033E008CD441 /* mainbattlecontroller.swift */,
+			);
+			path = "Main Battle";
 			sourceTree = "<group>";
 		};
 		E24E5AC225CEBC4B008C426B /* Onboarding */ = {
@@ -358,6 +386,9 @@
 		E2A615F925BE0134009CF961 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E288998F25E479D700282A22 /* userImage3.png */,
+				E288998A25E4793B00282A22 /* userImage2.png */,
+				E288998525E478BF00282A22 /* userImage.png */,
 				E24EC2EF25D8AAC0002DF681 /* heart.png */,
 				E26DF6AA25D04DAD00327981 /* arrowplay.png */,
 				E26DF6A525D04D1200327981 /* arrowdots.png */,
@@ -554,6 +585,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E288999025E479D700282A22 /* userImage3.png in Resources */,
 				E2A615F525BDD387009CF961 /* Eina01-SemiboldItalic.ttf in Resources */,
 				E2A615D825BDD387009CF961 /* Eina04-SemiBold.ttf in Resources */,
 				E24E5ACD25CEBF98008C426B /* mentoring-fliped.png in Resources */,
@@ -572,9 +604,12 @@
 				E24E681525CDBA5000E75BD2 /* handstouching.png in Resources */,
 				E2A615DF25BDD387009CF961 /* Eina03-SemiBold.ttf in Resources */,
 				E2A615DC25BDD387009CF961 /* Eina01-BoldItalic.ttf in Resources */,
+				E23C67CB25E30126008CD441 /* mainBattleController.xib in Resources */,
 				E24EC2F025D8AAC0002DF681 /* heart.png in Resources */,
 				E234464425D2ACEA00AB83D9 /* DashboardStoryboard.storyboard in Resources */,
+				E288998B25E4793B00282A22 /* userImage2.png in Resources */,
 				E2A615D725BDD387009CF961 /* Eina04-Bold.ttf in Resources */,
+				E288998625E478BF00282A22 /* userImage.png in Resources */,
 				E2E58A0A25BDA9EB00834728 /* LaunchScreen.storyboard in Resources */,
 				E2A615E025BDD387009CF961 /* Eina04-Light.ttf in Resources */,
 				E26DF69C25D0497B00327981 /* arrow.png in Resources */,
@@ -744,6 +779,7 @@
 				E2A615AD25BDC311009CF961 /* HexColors.swift in Sources */,
 				E234466825D2DF1000AB83D9 /* PrintConstraints.swift in Sources */,
 				E2C3802C25C2BAB200463ABF /* Helpers.swift in Sources */,
+				E23C67D025E3033E008CD441 /* mainbattlecontroller.swift in Sources */,
 				E234464C25D2B11A00AB83D9 /* DashboardRoot.swift in Sources */,
 				E2E589FD25BDA9E900834728 /* SceneDelegate.swift in Sources */,
 				E234466E25D3F90500AB83D9 /* TopCollectionViewCell.swift in Sources */,
