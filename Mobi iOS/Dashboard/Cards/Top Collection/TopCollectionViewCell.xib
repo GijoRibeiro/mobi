@@ -65,7 +65,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="feh-w8-gKv">
                                 <rect key="frame" x="0.0" y="0.0" width="45" height="20"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble.middle.bottom" catalog="system" highlightedImage="google" translatesAutoresizingMaskIntoConstraints="NO" id="aS5-vN-Mpp">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble.middle.bottom" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aS5-vN-Mpp">
                                         <rect key="frame" x="0.0" y="1" width="24" height="19.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -85,7 +85,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="fzR-Cm-sCT">
                                 <rect key="frame" x="55" y="0.0" width="49.5" height="20"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suit.heart" catalog="system" highlightedImage="google" translatesAutoresizingMaskIntoConstraints="NO" id="zfp-7u-Cp0">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suit.heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zfp-7u-Cp0">
                                         <rect key="frame" x="0.0" y="1.5" width="20" height="17.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -141,7 +141,6 @@
     </objects>
     <resources>
         <image name="bubble.middle.bottom" catalog="system" width="128" height="110"/>
-        <image name="google" width="128" height="128"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
