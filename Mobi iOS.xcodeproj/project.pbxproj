@@ -74,6 +74,11 @@
 		E2A615F425BDD387009CF961 /* Eina01-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D425BDD387009CF961 /* Eina01-Regular.ttf */; };
 		E2A615F525BDD387009CF961 /* Eina01-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D525BDD387009CF961 /* Eina01-SemiboldItalic.ttf */; };
 		E2A615FB25BE014E009CF961 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A615FA25BE014D009CF961 /* google.png */; };
+		E2B83DAE25E5464E001AF535 /* notificationBell.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B83DAD25E5464E001AF535 /* notificationBell.png */; };
+		E2B83DB825E54993001AF535 /* bellWithFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B83DB725E54992001AF535 /* bellWithFrame.png */; };
+		E2B83DC025E54AC8001AF535 /* notificationBellTick.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B83DBF25E54AC8001AF535 /* notificationBellTick.png */; };
+		E2B83DC525E54C77001AF535 /* bellwithFrame2.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B83DC425E54C77001AF535 /* bellwithFrame2.png */; };
+		E2B83DCA25E54E18001AF535 /* BellWithoutFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B83DC925E54E18001AF535 /* BellWithoutFrame.png */; };
 		E2C3802C25C2BAB200463ABF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3802B25C2BAB200463ABF /* Helpers.swift */; };
 		E2E589FB25BDA9E900834728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E589FA25BDA9E900834728 /* AppDelegate.swift */; };
 		E2E589FD25BDA9E900834728 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E589FC25BDA9E900834728 /* SceneDelegate.swift */; };
@@ -182,6 +187,11 @@
 		E2A615D425BDD387009CF961 /* Eina01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-Regular.ttf"; sourceTree = "<group>"; };
 		E2A615D525BDD387009CF961 /* Eina01-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		E2A615FA25BE014D009CF961 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		E2B83DAD25E5464E001AF535 /* notificationBell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notificationBell.png; sourceTree = "<group>"; };
+		E2B83DB725E54992001AF535 /* bellWithFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bellWithFrame.png; path = ../../../../../Desktop/bellWithFrame.png; sourceTree = "<group>"; };
+		E2B83DBF25E54AC8001AF535 /* notificationBellTick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notificationBellTick.png; sourceTree = "<group>"; };
+		E2B83DC425E54C77001AF535 /* bellwithFrame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bellwithFrame2.png; sourceTree = "<group>"; };
+		E2B83DC925E54E18001AF535 /* BellWithoutFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BellWithoutFrame.png; sourceTree = "<group>"; };
 		E2C3802B25C2BAB200463ABF /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		E2E589F725BDA9E900834728 /* Mobi iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobi iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E589FA25BDA9E900834728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -263,8 +273,8 @@
 		E234463F25D2ACD800AB83D9 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				E234465325D2B16C00AB83D9 /* DashboardRootNC.swift */,
 				E23C67C825E300FC008CD441 /* Cards */,
+				E234465325D2B16C00AB83D9 /* DashboardRootNC.swift */,
 				E234464B25D2B11A00AB83D9 /* DashboardRoot.swift */,
 				E234464325D2ACEA00AB83D9 /* DashboardStoryboard.storyboard */,
 			);
@@ -386,6 +396,11 @@
 		E2A615F925BE0134009CF961 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E2B83DC925E54E18001AF535 /* BellWithoutFrame.png */,
+				E2B83DC425E54C77001AF535 /* bellwithFrame2.png */,
+				E2B83DBF25E54AC8001AF535 /* notificationBellTick.png */,
+				E2B83DB725E54992001AF535 /* bellWithFrame.png */,
+				E2B83DAD25E5464E001AF535 /* notificationBell.png */,
 				E288998F25E479D700282A22 /* userImage3.png */,
 				E288998A25E4793B00282A22 /* userImage2.png */,
 				E288998525E478BF00282A22 /* userImage.png */,
@@ -591,6 +606,7 @@
 				E24E5ACD25CEBF98008C426B /* mentoring-fliped.png in Resources */,
 				E2A615EC25BDD387009CF961 /* Eina01-RegularItalic.ttf in Resources */,
 				E2A615F325BDD387009CF961 /* Eina03-SemiboldItalic.ttf in Resources */,
+				E2B83DB825E54993001AF535 /* bellWithFrame.png in Resources */,
 				E2A615E525BDD387009CF961 /* Eina04-BoldItalic.ttf in Resources */,
 				E2A615E325BDD387009CF961 /* Eina02-SemiBold.ttf in Resources */,
 				E26DF69725D01BDB00327981 /* cooler.png in Resources */,
@@ -604,9 +620,11 @@
 				E24E681525CDBA5000E75BD2 /* handstouching.png in Resources */,
 				E2A615DF25BDD387009CF961 /* Eina03-SemiBold.ttf in Resources */,
 				E2A615DC25BDD387009CF961 /* Eina01-BoldItalic.ttf in Resources */,
+				E2B83DAE25E5464E001AF535 /* notificationBell.png in Resources */,
 				E23C67CB25E30126008CD441 /* mainBattleController.xib in Resources */,
 				E24EC2F025D8AAC0002DF681 /* heart.png in Resources */,
 				E234464425D2ACEA00AB83D9 /* DashboardStoryboard.storyboard in Resources */,
+				E2B83DC525E54C77001AF535 /* bellwithFrame2.png in Resources */,
 				E288998B25E4793B00282A22 /* userImage2.png in Resources */,
 				E2A615D725BDD387009CF961 /* Eina04-Bold.ttf in Resources */,
 				E288998625E478BF00282A22 /* userImage.png in Resources */,
@@ -627,6 +645,7 @@
 				E260841625C0CFDA00FBEB60 /* logo2.png in Resources */,
 				E26DF68925D01B1C00327981 /* mediaanalyse.png in Resources */,
 				E2A615DA25BDD387009CF961 /* Eina03-BoldItalic.ttf in Resources */,
+				E2B83DCA25E54E18001AF535 /* BellWithoutFrame.png in Resources */,
 				E2A615EF25BDD387009CF961 /* Eina02-Regular.ttf in Resources */,
 				E2E58A0725BDA9EB00834728 /* Assets.xcassets in Resources */,
 				E2A615E425BDD387009CF961 /* Eina04-Regular.ttf in Resources */,
@@ -635,6 +654,7 @@
 				E2A615E825BDD387009CF961 /* Eina01-LightItalic.ttf in Resources */,
 				E2A615ED25BDD387009CF961 /* Eina02-SemiboldItalic.ttf in Resources */,
 				E234466F25D3F90500AB83D9 /* TopCollectionViewCell.xib in Resources */,
+				E2B83DC025E54AC8001AF535 /* notificationBellTick.png in Resources */,
 				E2E58A0225BDA9E900834728 /* Main.storyboard in Resources */,
 				E260841125C0CF0F00FBEB60 /* logo.png in Resources */,
 				E2A615E625BDD387009CF961 /* Eina01-Bold.ttf in Resources */,
