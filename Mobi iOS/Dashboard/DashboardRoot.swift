@@ -36,7 +36,7 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     
     //content
     let loadingIndicator = UIActivityIndicatorView()
-    var images:[UIImage] = []
+    var images:[String] = []
     var imagesWithFaces:[UIImage] = []
     var imagesToPost:[UIImage] = []
     var mainTags: [String] = ["Nerdy", "Playful", "Joy", "Tech", "Musician", "Retro"]
@@ -54,13 +54,11 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //creates array with images
         fetchData { (details) in
             for detail in details {
-                print(detail.title)
+                self.images.append(detail.cover!)
             }
-            
-//            print(details.first!.posts.title)
-            
         }
         
         labelFont(type: welcomeLabelNavBar, weight: "Bold", fontSize: 32)
@@ -213,18 +211,18 @@ extension dashboardRootVC {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCollectionViewCell", for: indexPath) as! TopCollectionViewCell
         
-        cell.originalPhoto.load(url: fileUrl!)
-        //        cell.mainTag.text = mainTags[indexPath.row]
-        
+        cell.originalPhoto.image = getImage(from: images[indexPath.row])
+
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 370, height: 370)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
 }
 
@@ -249,6 +247,29 @@ extension dashboardRootVC {
                 print(error)
             }
         }.resume()
+    }
+    
+    func getImage(from string: String) -> UIImage? {
+        //2. Get valid URL
+        guard let url = URL(string: string)
+            else {
+                print("Unable to create URL")
+                return nil
+        }
+
+        var image: UIImage? = nil
+        do {
+            //3. Get valid data
+            let data = try Data(contentsOf: url, options: [])
+
+            //4. Make image
+            image = UIImage(data: data)
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+
+        return image
     }
 }
 
