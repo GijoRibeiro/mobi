@@ -8,13 +8,13 @@
         "authortwo": "Gijo Two"
       }
     ],
-    "cover": "https://images.unsplash.com/photo-1558126372-76b529458592?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2978&q=80"
+    "cover": "https://picsum.photos/200/300"
   },
   {
     "id": 2,
     "title": "Reusables",
     "author": "@Gijo",
-    "cover": "https://images.unsplash.com/photo-1614375258663-824c4c5b6e36?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+    "cover": "https://picsum.photos/200/300"
   },
   {
     "id": 3,
