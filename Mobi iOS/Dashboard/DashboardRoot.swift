@@ -234,7 +234,7 @@ extension dashboardRootVC {
         
         let url = URL(string: "https://raw.githubusercontent.com/GijoRibeiro/mobi/main/db.json")!
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             guard let data = data else {return}
             
