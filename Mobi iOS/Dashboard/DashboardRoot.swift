@@ -12,54 +12,63 @@ import CoreImage.CIFilterBuiltins
 import SDWebImage
 import UIKit
 
-class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollectionViewDataSource {
+class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var mainViewContainer: UIScrollView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var insideScrollViewContainer: UIView!
-    @IBOutlet weak var trendImageContainer: UIView!
-    @IBOutlet weak var trendImage: UIImageView!
     @IBOutlet weak var trendyLabel: UILabel!
     @IBOutlet weak var topPhotosLabel: UILabel!
-    @IBOutlet weak var blurShadow: UIImageView!
     @IBOutlet weak var postTodayLabel: UILabel!
-    @IBOutlet weak var customNavBar: UIView!
-    @IBOutlet weak var navBarHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerBeforeAfterShadow: UIImageView!
     @IBOutlet weak var containerBeforeAfter: UIView!
     @IBOutlet weak var afterPhoto: UIImageView!
     @IBOutlet weak var beforePhoto: UIImageView!
-    
-    var lastContentOffset: CGFloat = 0
+    @IBOutlet weak var winner1: mainBattleController!
+    @IBOutlet weak var winner2: mainBattleController!
     
     //navbar layout
-    var customNavBarPro = UIView()
-    var profilePicNavBar = UIImageView()
-    var welcomeLabelNavBar = UILabel()
+    let customNavBarPro = UIView()
+    let profilePicNavBar = UIImageView()
+    let welcomeLabelNavBar = UILabel()
+    let notificationBell = UIImageView()
+    var countInt = 3
     
+    //content
     let loadingIndicator = UIActivityIndicatorView()
     var images:[UIImage] = []
     var imagesWithFaces:[UIImage] = []
     var imagesToPost:[UIImage] = []
     var mainTags: [String] = ["Nerdy", "Playful", "Joy", "Tech", "Musician", "Retro"]
     
+    //photos
     let filterContext = CIContext()
-    
     let trendImageUrl = "https://source.unsplash.com/random"
-    let fileUrl = URL(string: "https://source.unsplash.com/featured/?film")
-    let faceUrl = URL(string: "https://source.unsplash.com/featured/?face")
+    let fileUrl = URL(string: "https://source.unsplash.com/random")
     let titleLabel : UILabel = UILabel()
     let subTitleLabel : UILabel = UILabel()
+    
+    //reusables
+    let winnersCard = mainBattleController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        welcomeLabelNavBar.text = "Large Title"
-        welcomeLabelNavBar.textColor = .black
-        welcomeLabelNavBar.textAlignment = .left
-        welcomeLabelNavBar.frame = CGRect(x: 20, y: 75, width: 200, height: 40)
-        labelFont(type: welcomeLabelNavBar, weight: "Bold", fontSize: 32)
+        fetchData { (details) in
+            for detail in details {
+                print(detail.title)
+            }
+            
+//            print(details.first!.posts.title)
+            
+        }
         
+        labelFont(type: welcomeLabelNavBar, weight: "Bold", fontSize: 32)
+        welcomeLabelNavBar.text = "Explore Stories"
+        welcomeLabelNavBar.textAlignment = .left
+        welcomeLabelNavBar.numberOfLines = 2
+        welcomeLabelNavBar.lineBreakMode = .byWordWrapping
+        welcomeLabelNavBar.sizeToFit()
         profilePicNavBar.image = UIImage(named: "userImage3.png")
         profilePicNavBar.layer.cornerRadius = 16
         profilePicNavBar.clipsToBounds = true
@@ -68,105 +77,27 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
         self.navigationController?.navigationBar.addSubview(welcomeLabelNavBar)
         self.navigationController?.navigationBar.addSubview(profilePicNavBar)
         
-        minimizeNavBar()
-        
-        mainViewContainer.delegate = self
-        
         setLayout()
-        fetchPhotos()
-        addTrendyImage()
-        postTodayLayout()
         
         // nav bar
         setNavSubTitle()
-        
-        // fetch photos
-        selectFacePhotos(runAfterLoop: addPostTodayPhotos)
         
         self.navigationController?.navigationBar.layoutMargins.left = 20
         self.navigationController?.navigationBar.layoutMargins.right = 20
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        minimizeNavBar()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        updateScrollViewWhenRotating()
     }
     
     @objc func trendyTapped(sender:UITapGestureRecognizer){
         print("loading...")
-    }
-    
-    func searchForFace(photo: UIImageView) {
-        
-        if let inputImage = photo.image {
-            let ciImage = CIImage(cgImage: inputImage.cgImage!)
-            
-            let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
-            let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: options)!
-            
-            let faces = faceDetector.features(in: ciImage)
-            
-            if let face = faces.first as? CIFaceFeature {
-                print("Found face at \(face.bounds)")
-                
-                let faceBox:UIView = UIView()
-                faceBox.frame = CGRect(x: 0, y: 0, width: face.bounds.width, height: face.bounds.height)
-                faceBox.layer.borderWidth = 3
-                faceBox.layer.borderColor = UIColor.red.cgColor
-                photo.addSubview(faceBox)
-            }
-        }
-    }
-    
-    func searchForFaceImage(photo: UIImage) -> Bool {
-        
-        let ciImage = CIImage(cgImage: photo.cgImage!)
-        
-        let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
-        let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: options)!
-        
-        let faces = faceDetector.features(in: ciImage)
-        
-        for _ in faces {
-            print("Found a face! Adding to the face folder.")
-            return true
-        }
-        return false
-    }
-    
-    func selectFacePhotos(runAfterLoop: () -> ()) {
-        
-        beforePhoto.sd_setImage(with: faceUrl, placeholderImage: UIImage(named: "placeholder.png"))
-        
-        for element in imagesToPost {
-            if searchForFaceImage(photo: element) == true {
-                imagesWithFaces += [element]
-            }
-        }
-        runAfterLoop()
-    }
-    
-    func addPostTodayPhotos() {
-        beforePhoto.image = imagesWithFaces.randomElement()
-        afterPhoto.image = imagesWithFaces.randomElement()
-        print("FINALLY")
-    }
-    
-    func updateAfterPhotoWithFilter() {
-        
-        if let currentFilter = CIFilter(name: "CIPhotoEffectProcess") {
-            let beginImage = CIImage(image: beforePhoto.image!)
-            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-            //            currentFilter.setValue(1, forKey: kCIInputIntensityKey)
-            
-            if let output = currentFilter.outputImage {
-                if let cgimg = filterContext.createCGImage(output, from: output.extent) {
-                    let processedImage = UIImage(cgImage: cgimg)
-                    afterPhoto.image = processedImage
-                }
-            }
-        }
     }
 }
 
@@ -180,45 +111,69 @@ extension dashboardRootVC {
     
     func minimizeNavBar() {
         
-        if (self.navigationController?.navigationBar.frame.height)! > 80 {
-            UIView.animate(withDuration: 0.4) {
-                self.subTitleLabel.alpha = 1
-            }
-        } else {
-            UIView.animate(withDuration: 0.4) {
-                self.subTitleLabel.alpha = 0.0
-            }
-        }
+        let expandedTitleHeight: CGFloat = 80
+        let expandedTitleWidth: CGFloat = 300
+        let expandedNavBarHeight: CGFloat = 120
+        let notificationBellSize: CGFloat = 42
+        
         
         if (self.navigationController?.navigationBar.frame.height)! > 80 {
-            UIView.animate(withDuration: 0.2) {
-//                expanded
+            //            expanded
+            UIView.animate(withDuration: 0.1) {
+                
                 self.customNavBarPro.frame = CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.width)!, height: 210)
-                self.customNavBarPro.backgroundColor = .white
+                self.customNavBarPro.backgroundColor = .systemBackground
+                self.welcomeLabelNavBar.textColor = .label
                 self.customNavBarPro.layer.shadowOpacity = 0.0
                 
-                self.welcomeLabelNavBar.frame = CGRect(x: 20, y: (self.navigationController?.navigationBar.frame.height)! / 0.6, width: 200, height: 40)
-                labelFont(type: self.welcomeLabelNavBar, weight: "Bold", fontSize: 32)
+                //limit expansion
+                if (self.navigationController?.navigationBar.frame.height)! >= expandedNavBarHeight {
+                    self.welcomeLabelNavBar.frame = CGRect(x: 20, y: expandedNavBarHeight / 0.6, width: expandedTitleWidth, height: expandedTitleHeight)
+                } else {
+                    self.welcomeLabelNavBar.frame = CGRect(x: 20, y: (self.navigationController?.navigationBar.frame.height)! / 0.6, width: expandedTitleWidth, height: expandedTitleHeight)
+                }
+                labelFont(type: self.welcomeLabelNavBar, weight: "Bold", fontSize: 28)
                 
                 self.profilePicNavBar.alpha = 1.0
-                self.profilePicNavBar.frame = CGRect(x: 20, y: self.welcomeLabelNavBar.frame.minY - self.welcomeLabelNavBar.frame.height - 60 , width: 60, height: 60)
-            }
-        } else {
-//            minimized
-            UIView.animate(withDuration: 0.2) {
+                self.profilePicNavBar.frame = CGRect(x: 20, y: 30, width: 60, height: 60)
                 
-                self.customNavBarPro.frame = CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.width)!, height: 65)
-                self.customNavBarPro.backgroundColor = .white
+                self.subTitleLabel.alpha = 1
+                self.subTitleLabel.frame = CGRect(x: 20, y: self.welcomeLabelNavBar.frame.minY - 12 , width: 200, height: 40)
+                
+                self.notificationBell.frame = CGRect(x: (self.navigationController?.navigationBar.frame.width)! - notificationBellSize - 20, y: 0, width: notificationBellSize, height: notificationBellSize)
+                self.notificationBell.center.y = self.profilePicNavBar.center.y
+                self.notificationBell.alpha = 0.7
+                self.notificationBell.image = UIImage(named: "bellwithFrame2.png")
+            }
+            
+            // ends expanded
+            
+        } else {
+            
+            // minimzed
+            UIView.animate(withDuration: 0.1) {
+                
+                self.customNavBarPro.frame = CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.width)!, height: (self.navigationController?.navigationBar.frame.height)! + 10)
+                self.customNavBarPro.backgroundColor = .systemBackground
                 self.customNavBarPro.layer.shadowColor = UIColor.black.cgColor
-                self.customNavBarPro.layer.shadowOpacity = 0.05
                 self.customNavBarPro.layer.shadowOffset = CGSize(width: 0, height: 24)
                 self.customNavBarPro.layer.shadowRadius = 12
+                self.customNavBarPro.layer.shadowOpacity = 0
+                
+                self.subTitleLabel.alpha = 0.0
+                
+                labelFont(type: self.welcomeLabelNavBar, weight: "Bold", fontSize: 18)
+                self.welcomeLabelNavBar.textColor = .label
+                self.welcomeLabelNavBar.frame = CGRect(x: 20, y: 0, width: 200, height: (self.navigationController?.navigationBar.frame.height)! + 10)
                 
                 self.profilePicNavBar.alpha = 0.0
+                self.profilePicNavBar.frame = CGRect(x: 20, y: self.welcomeLabelNavBar.frame.minY - 20, width: 60, height: 60)
+                self.profilePicNavBar.alpha = 0.0
                 
-                labelFont(type: self.welcomeLabelNavBar, weight: "Bold", fontSize: 24)
-                self.welcomeLabelNavBar.frame = CGRect(x: 20, y: (self.navigationController?.navigationBar.frame.height)! / 2.4, width: 200, height: 40)
-                
+                self.notificationBell.image = UIImage(named: "BellWithoutFrame")
+                self.notificationBell.frame = CGRect(x: (self.navigationController?.navigationBar.frame.width)! - 20 - 30, y: 0, width: 20, height: 20)
+                self.notificationBell.center.y = self.customNavBarPro.center.y
+                self.notificationBell.alpha = 0.6
             }
         }
     }
@@ -227,12 +182,13 @@ extension dashboardRootVC {
         subTitleLabel.text = "Welcome, Gijo"
         subTitleLabel.textColor = .gray
         subTitleLabel.textAlignment = .left
-        subTitleLabel.frame = CGRect(x: 20, y: 10, width: 200, height: 40)
         labelFont(type: subTitleLabel, weight: "Regular", fontSize: 16)
         
-        
-        
         self.navigationController?.navigationBar.addSubview(subTitleLabel)
+        
+        notificationBell.image = UIImage(named: "bellwithFrame2.png")
+        notificationBell.contentMode = .scaleAspectFit
+        self.navigationController?.navigationBar.addSubview(notificationBell)
     }
 }
 
@@ -241,65 +197,13 @@ extension dashboardRootVC {
     func setLayout() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .clear
         collectionView.register(TopCollectionViewCell.nib(), forCellWithReuseIdentifier: "TopCollectionViewCell")
-        
-        labelFont(type: topPhotosLabel, weight: "Bold", fontSize: 20)
-        labelFont(type: trendyLabel, weight: "Bold", fontSize: 20)
-        labelFont(type: postTodayLabel, weight: "Bold", fontSize: 20)
-    }
-    
-    func addTrendyImage() {
-        
-//        let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.trendyTapped(sender:)))
-//        trendImage.addGestureRecognizer(tapGR)
-//        trendImage.isUserInteractionEnabled = true
-//
-//        //container
-//        trendImageContainer.backgroundColor = supportColor
-//        trendImageContainer.layer.cornerRadius = appRoundness
-//        trendImageContainer.clipsToBounds = true
-//
-//        //pic
-//        trendImage.clipsToBounds = true
-//        trendImage.layer.cornerRadius = appRoundness
-//
-//        //fetch
-//        trendImage.load(url: fileUrl!)
-//        blurShadow.load(url: fileUrl!)
-    }
-    
-    func postTodayLayout() {
-        
-        //container
-        containerBeforeAfter.backgroundColor = supportColor
-        containerBeforeAfter.layer.cornerRadius = appRoundness
-        containerBeforeAfter.clipsToBounds = true
-        
-        //before pic
-        beforePhoto.clipsToBounds = true
-        beforePhoto.layer.cornerRadius = appRoundness
-        
-        //after pic
-        afterPhoto.clipsToBounds = true
-        afterPhoto.layer.cornerRadius = appRoundness
-    }
-    
-    func updateScrollViewWhenRotating() {
-        
-        // container inside scrollview
-        var height:CGFloat = 0
-        for view in self.insideScrollViewContainer.subviews {
-            height = height + view.bounds.size.height + 24
-        }
-        
-        self.mainViewContainer.contentSize = CGSize(width: self.mainViewContainer.frame.width, height: height)
-        self.insideScrollViewContainer.frame = CGRect(x: 0, y: 0, width: self.mainViewContainer.frame.width, height: height)
     }
 }
 
 //Collection View
 extension dashboardRootVC {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
@@ -309,71 +213,46 @@ extension dashboardRootVC {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCollectionViewCell", for: indexPath) as! TopCollectionViewCell
         
-        cell.originalPhoto.image = imagesWithFaces.randomElement()
-        cell.mainTag.text = mainTags[indexPath.row]
+        cell.originalPhoto.load(url: fileUrl!)
+        //        cell.mainTag.text = mainTags[indexPath.row]
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 370, height: 370)
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
 }
 
-//Fetch photos
 extension dashboardRootVC {
     
-    func fetchPhotos() {
+    func fetchData(completionHandler: @escaping ([Posts]) -> Void) {
         
-        let photosToFetch = 30
+        let url = URL(string: "https://raw.githubusercontent.com/GijoRibeiro/mobi/main/db.json")!
         
-        // Sort the images by descending creation date and fetch the first 3
-        let fetchOptions = PHFetchOptions()
-        fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: false)]
-        fetchOptions.fetchLimit = photosToFetch
-        
-        // Fetch the image assets
-        let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: fetchOptions)
-        
-        // If the fetch result isn't empty,
-        // proceed with the image request
-        if fetchResult.count > 0 {
-            let totalImageCountNeeded = photosToFetch
-            fetchPhotoAtIndex(0, totalImageCountNeeded, fetchResult)
-        }
-    }
-    
-    // Repeatedly call the following method while incrementing
-    // the index until all the photos are fetched
-    func fetchPhotoAtIndex(_ index:Int, _ totalImageCountNeeded: Int, _ fetchResult: PHFetchResult<PHAsset>) {
-        
-        // Note that if the request is not set to synchronous
-        // the requestImageForAsset will return both the image
-        // and thumbnail; by setting synchronous to true it
-        // will return just the thumbnail
-        let requestOptions = PHImageRequestOptions()
-        requestOptions.isSynchronous = true
-        
-        // Perform the image request
-        PHImageManager.default().requestImage(for: fetchResult.object(at: index) as PHAsset, targetSize: view.frame.size, contentMode: PHImageContentMode.aspectFill, options: requestOptions, resultHandler: { (image, _) in
-            if let image = image {
-                // Add the returned image to your array
-                self.images += [image]
-                self.imagesToPost += [image]
-            }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            // If you haven't already reached the first
-            // index of the fetch result and if you haven't
-            // already stored all of the images you need,
-            // perform the fetch request again with an
-            // incremented index
-            if index + 1 < fetchResult.count && self.images.count < totalImageCountNeeded {
-                self.fetchPhotoAtIndex(index + 1, totalImageCountNeeded, fetchResult)
-            } else {
-                // Else you have completed creating your array
-                print("Completed array: \(self.images)")
+            guard let data = data else {return}
+            
+            do {
+                let postProductDetail = try JSONDecoder().decode([Posts].self, from: data)
+                
+                completionHandler(postProductDetail)
+                
             }
-        })
+            catch {
+                let error = error
+                print(error)
+            }
+        }.resume()
     }
 }
+
+
+
+
+

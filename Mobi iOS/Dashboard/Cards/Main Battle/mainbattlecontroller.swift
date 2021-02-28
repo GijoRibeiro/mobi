@@ -7,9 +7,14 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 @IBDesignable
 final class mainBattleController: UIView {
+    
+    @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var bgImageBlur: UIImageView!
+    @IBOutlet weak var fadeImage: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +24,14 @@ final class mainBattleController: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.configurateView()
+
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 12
+        
+        self.mainImage.layer.cornerRadius = 12
+        
+        fadeImage.layer.cornerRadius = 12
+        
     }
     
     private func configurateView() {

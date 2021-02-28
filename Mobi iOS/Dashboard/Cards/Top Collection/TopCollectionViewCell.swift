@@ -14,12 +14,15 @@ class TopCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var blackFade: UIView!
     @IBOutlet weak var subTags: UILabel!
     @IBOutlet weak var mainTag: UILabel!
-    @IBOutlet weak var bottomContainer: UIView!
+    @IBOutlet weak var bottomContainer: UIVisualEffectView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         addPhotoFade()
+        
+        bottomContainer.layer.cornerRadius = 20
+        bottomContainer.clipsToBounds = true
         
         originalPhoto.layer.cornerRadius = appRoundness
         
