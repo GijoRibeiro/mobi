@@ -8,18 +8,18 @@
         "authortwo": "Gijo Two"
       }
     ],
-    "cover": "https://picsum.photos/200/300"
+    "cover": "https://images.unsplash.com/photo-1565968464329-b7a8827462c9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2737&q=80"
   },
   {
     "id": 2,
     "title": "Reusables",
     "author": "@Gijo",
-    "cover": "https://picsum.photos/200/300"
+    "cover": "https://images.unsplash.com/photo-1602555461825-d7c01f389986?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
   },
   {
     "id": 3,
     "title": "Reusables",
     "author": "@Gijo",
-    "cover": "https://picsum.photos/200/300"
+    "cover": "https://images.unsplash.com/photo-1588007129936-5b7754628cd3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80"
   }
 ]
