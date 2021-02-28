@@ -32,9 +32,10 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     let profilePicNavBar = UIImageView()
     let welcomeLabelNavBar = UILabel()
     let notificationBell = UIImageView()
-    var countInt = 3
+    var numberOfPostsToShow = Int()
     
     //content
+    var dataWasFetched = false
     let loadingIndicator = UIActivityIndicatorView()
     var images:[String] = []
     var imagesWithFaces:[UIImage] = []
@@ -51,14 +52,23 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     //reusables
     let winnersCard = mainBattleController()
     
+    //json data
+    var postsFromJson = [Posts]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //creates array with images
         fetchData { (details) in
-            for detail in details {
-                self.images.append(detail.cover!)
+            
+            DispatchQueue.main.async {
+                print("reloading data")
+                self.collectionView.reloadData()
             }
+//            for detail in details {
+//                self.images.append(detail.cover!)
+//                print("Now \(self.images.count) images fetched from the json")
+//            }
         }
         
         labelFont(type: welcomeLabelNavBar, weight: "Bold", fontSize: 32)
@@ -84,14 +94,18 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
         self.navigationController?.navigationBar.layoutMargins.right = 20
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            print("Data was feteched. Reloading table.")
+            self.collectionView.reloadData()
+        }
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         minimizeNavBar()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
     }
     
     @objc func trendyTapped(sender:UITapGestureRecognizer){
@@ -104,7 +118,6 @@ extension dashboardRootVC {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         minimizeNavBar()
-        
     }
     
     func minimizeNavBar() {
@@ -113,8 +126,7 @@ extension dashboardRootVC {
         let expandedTitleWidth: CGFloat = 300
         let expandedNavBarHeight: CGFloat = 120
         let notificationBellSize: CGFloat = 42
-        
-        
+            
         if (self.navigationController?.navigationBar.frame.height)! > 80 {
             //            expanded
             UIView.animate(withDuration: 0.1) {
@@ -211,18 +223,26 @@ extension dashboardRootVC {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCollectionViewCell", for: indexPath) as! TopCollectionViewCell
         
-        cell.originalPhoto.image = getImage(from: images[indexPath.row])
-
+        if dataWasFetched == true {
+            cell.originalPhoto.sd_setImage(with: URL(string: images[indexPath.row]), placeholderImage: UIImage(named: "placeholder.png"))
+//            cell.likesLabel.text = Posts[indexPath.row].
+        } else {
+            cell.originalPhoto.image = UIImage(named: "Transparent.png")
+        }
         return cell
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 370, height: 370)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if numberOfPostsToShow > 1 {
+            dataWasFetched = true
+            return numberOfPostsToShow
+        } else {
+            return 8
+        }
     }
 }
 
@@ -240,8 +260,9 @@ extension dashboardRootVC {
                 let postProductDetail = try JSONDecoder().decode([Posts].self, from: data)
                 
                 completionHandler(postProductDetail)
-                
+                self.numberOfPostsToShow = postProductDetail.count
             }
+            
             catch {
                 let error = error
                 print(error)

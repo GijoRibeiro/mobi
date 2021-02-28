@@ -14,6 +14,12 @@ class dashboardRootNC: UINavigationController {
         super.viewDidLoad()
         
         setFonts()
+        
+        let statusBarFrame = UIApplication.shared.statusBarFrame
+        let statusBarView = UIView(frame: statusBarFrame)
+        
+        self.view.addSubview(statusBarView)
+        statusBarView.backgroundColor = .systemBackground
     }
     
     func setFonts() {

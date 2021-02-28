@@ -10,6 +10,7 @@
 		06E921F8F9F90B590891586E /* Pods_Mobi_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8943C474FA5067584F4F0666 /* Pods_Mobi_iOS.framework */; };
 		2604137C964D1267AFEF365C /* Pods_Mobi_iOS_Mobi_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F07ACC48F2CBD765AEA5D560 /* Pods_Mobi_iOS_Mobi_iOSUITests.framework */; };
 		A29003CB4A379B0F07F670BA /* Pods_Mobi_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31862C638940F7855985385 /* Pods_Mobi_iOSTests.framework */; };
+		E2134DE025EBE15F00216520 /* Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = E2134DDF25EBE15F00216520 /* Transparent.png */; };
 		E234464425D2ACEA00AB83D9 /* DashboardStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E234464325D2ACEA00AB83D9 /* DashboardStoryboard.storyboard */; };
 		E234464C25D2B11A00AB83D9 /* DashboardRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234464B25D2B11A00AB83D9 /* DashboardRoot.swift */; };
 		E234465425D2B16C00AB83D9 /* DashboardRootNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234465325D2B16C00AB83D9 /* DashboardRootNC.swift */; };
@@ -123,6 +124,7 @@
 		8943C474FA5067584F4F0666 /* Pods_Mobi_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobi_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8CB5925256E4C0B0141C5E2 /* Pods-Mobi iOS-Mobi iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi iOS-Mobi iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Mobi iOS-Mobi iOSUITests/Pods-Mobi iOS-Mobi iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B687A30C06E5970B481EAFB1 /* Pods-Mobi iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Mobi iOSTests/Pods-Mobi iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		E2134DDF25EBE15F00216520 /* Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Transparent.png; sourceTree = "<group>"; };
 		E234464325D2ACEA00AB83D9 /* DashboardStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashboardStoryboard.storyboard; sourceTree = "<group>"; };
 		E234464B25D2B11A00AB83D9 /* DashboardRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRoot.swift; sourceTree = "<group>"; };
 		E234465325D2B16C00AB83D9 /* DashboardRootNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRootNC.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 		E2A615F925BE0134009CF961 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E2134DDF25EBE15F00216520 /* Transparent.png */,
 				E2B83DC925E54E18001AF535 /* BellWithoutFrame.png */,
 				E2B83DC425E54C77001AF535 /* bellwithFrame2.png */,
 				E2B83DBF25E54AC8001AF535 /* notificationBellTick.png */,
@@ -645,6 +648,7 @@
 				E260841625C0CFDA00FBEB60 /* logo2.png in Resources */,
 				E26DF68925D01B1C00327981 /* mediaanalyse.png in Resources */,
 				E2A615DA25BDD387009CF961 /* Eina03-BoldItalic.ttf in Resources */,
+				E2134DE025EBE15F00216520 /* Transparent.png in Resources */,
 				E2B83DCA25E54E18001AF535 /* BellWithoutFrame.png in Resources */,
 				E2A615EF25BDD387009CF961 /* Eina02-Regular.ttf in Resources */,
 				E2E58A0725BDA9EB00834728 /* Assets.xcassets in Resources */,
