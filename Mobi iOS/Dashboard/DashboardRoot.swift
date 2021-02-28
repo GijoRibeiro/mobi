@@ -32,7 +32,7 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     let profilePicNavBar = UIImageView()
     let welcomeLabelNavBar = UILabel()
     let notificationBell = UIImageView()
-    var countInt = 3
+    var numberOfPostsToShow = 1
     
     //content
     let loadingIndicator = UIActivityIndicatorView()
@@ -54,11 +54,15 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //creates array with images
+        //        creates array with images
         fetchData { (details) in
+            
             for detail in details {
                 self.images.append(detail.cover!)
+                print(self.images.count)
             }
+            
+            
         }
         
         labelFont(type: welcomeLabelNavBar, weight: "Bold", fontSize: 32)
@@ -82,6 +86,18 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
         
         self.navigationController?.navigationBar.layoutMargins.left = 20
         self.navigationController?.navigationBar.layoutMargins.right = 20
+        
+        
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            print("we appeared")
+            self.collectionView.reloadData()
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -202,6 +218,7 @@ extension dashboardRootVC {
 //Collection View
 extension dashboardRootVC {
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
@@ -211,7 +228,9 @@ extension dashboardRootVC {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCollectionViewCell", for: indexPath) as! TopCollectionViewCell
         
-        cell.originalPhoto.image = getImage(from: images[indexPath.row])
+        if numberOfPostsToShow > 1 {
+            cell.originalPhoto.sd_setImage(with: URL(string: images[indexPath.row]), placeholderImage: UIImage(named: "placeholder.png"))
+        }
 
         return cell
     }
@@ -222,7 +241,7 @@ extension dashboardRootVC {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+            return numberOfPostsToShow
     }
 }
 
@@ -240,8 +259,9 @@ extension dashboardRootVC {
                 let postProductDetail = try JSONDecoder().decode([Posts].self, from: data)
                 
                 completionHandler(postProductDetail)
-                
+                self.numberOfPostsToShow = postProductDetail.count
             }
+            
             catch {
                 let error = error
                 print(error)
