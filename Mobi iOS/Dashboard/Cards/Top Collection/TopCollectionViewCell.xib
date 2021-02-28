@@ -17,6 +17,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="357" height="345"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQC-yk-owu" userLabel="Loading">
+                        <rect key="frame" x="0.0" y="0.0" width="357" height="345"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Szc-8N-qZ3">
                         <rect key="frame" x="0.0" y="0.0" width="357" height="345"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,16 +109,20 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="UQC-yk-owu" secondAttribute="trailing" id="4oB-h5-5EF"/>
                 <constraint firstItem="GaF-FW-zEl" firstAttribute="centerY" secondItem="jd4-PC-QEj" secondAttribute="centerY" id="5g0-BZ-V5T"/>
                 <constraint firstAttribute="trailing" secondItem="Szc-8N-qZ3" secondAttribute="trailing" id="7yQ-9l-sNF"/>
                 <constraint firstAttribute="bottom" secondItem="Dhi-4v-WIF" secondAttribute="bottom" id="FZ0-tr-EAj"/>
+                <constraint firstAttribute="bottom" secondItem="UQC-yk-owu" secondAttribute="bottom" id="OsB-Vh-v9U"/>
                 <constraint firstItem="Dhi-4v-WIF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Xl8-is-pOR"/>
                 <constraint firstItem="Szc-8N-qZ3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="a5S-66-e8V"/>
+                <constraint firstItem="UQC-yk-owu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="che-qv-dNH"/>
                 <constraint firstAttribute="bottom" secondItem="jd4-PC-QEj" secondAttribute="bottom" constant="40" id="emb-mM-ik3"/>
                 <constraint firstItem="Dhi-4v-WIF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kaQ-Qx-usg"/>
                 <constraint firstAttribute="trailing" secondItem="Dhi-4v-WIF" secondAttribute="trailing" id="km8-Jf-iVy"/>
                 <constraint firstItem="Szc-8N-qZ3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="n3k-p1-Gny"/>
                 <constraint firstItem="jd4-PC-QEj" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="nV1-UJ-QJa"/>
+                <constraint firstItem="UQC-yk-owu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sEu-V4-5oY"/>
                 <constraint firstAttribute="bottom" secondItem="Szc-8N-qZ3" secondAttribute="bottom" id="vv9-jA-2v8"/>
                 <constraint firstItem="GaF-FW-zEl" firstAttribute="centerX" secondItem="jd4-PC-QEj" secondAttribute="centerX" constant="-2" id="wxe-AH-hai"/>
             </constraints>
@@ -122,6 +130,9 @@
             <connections>
                 <outlet property="blackFade" destination="Dhi-4v-WIF" id="H8d-YC-tfX"/>
                 <outlet property="bottomContainer" destination="jd4-PC-QEj" id="FEb-tp-dZl"/>
+                <outlet property="commentsLabel" destination="sYB-mv-R53" id="sXc-YL-9ke"/>
+                <outlet property="likesLabel" destination="8wp-Rz-yop" id="ILH-T6-uv4"/>
+                <outlet property="loadingView" destination="UQC-yk-owu" id="hHN-Mz-5Vz"/>
                 <outlet property="mainTag" destination="8wp-Rz-yop" id="vvB-IO-6Po"/>
                 <outlet property="originalPhoto" destination="Szc-8N-qZ3" id="0qd-Xw-alh"/>
             </connections>
@@ -134,6 +145,9 @@
         <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

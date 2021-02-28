@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import SkeletonView
 
 class TopCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var originalPhoto: UIImageView!
     
+    @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var blackFade: UIView!
-    @IBOutlet weak var subTags: UILabel!
     @IBOutlet weak var mainTag: UILabel!
     @IBOutlet weak var bottomContainer: UIVisualEffectView!
+    @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var commentsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +27,11 @@ class TopCollectionViewCell: UICollectionViewCell {
         bottomContainer.layer.cornerRadius = 20
         bottomContainer.clipsToBounds = true
         
+        loadingView.layer.cornerRadius = 20
+        loadingView.layer.masksToBounds = true
+        loadingView.isSkeletonable = true
+        loadingView.showAnimatedGradientSkeleton()
+
         originalPhoto.layer.cornerRadius = appRoundness
         
         self.layer.shadowColor = UIColor.black.cgColor

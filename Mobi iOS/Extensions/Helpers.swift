@@ -38,8 +38,9 @@ struct Root: Codable {
 struct Posts: Codable {
     var id: Int?
     var title: String?
+    var author: String?
     var cover: String?
-//    var author: Authors
+    var likes: Int?
 }
 
 struct Authors: Codable {

@@ -6,6 +6,7 @@ target 'Mobi iOS' do
   use_frameworks!
 
   pod 'SDWebImage', '~> 5.0'
+  pod 'SkeletonView'
 
   target 'Mobi iOSTests' do
     inherit! :search_paths
