@@ -38,6 +38,7 @@ struct Root: Codable {
 struct Posts: Codable {
     var id: Int?
     var title: String?
+    var cover: String?
 //    var author: Authors
 }
 
