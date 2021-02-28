@@ -216,19 +216,40 @@ extension dashboardRootVC {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+
+        // if let cell = collectionView.cellForItem(at: indexPath) as? TopCollectionViewCell {}
+        
+//        jsonResult.activeProfileComplete![0].status = "processed"
+        
+        print(postsFromJson[indexPath.row].likes!)
+        postsFromJson[indexPath.row].likes! += 1
+        self.collectionView.reloadItems(at: [indexPath])
         
         print("tapped")
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCollectionViewCell", for: indexPath) as! TopCollectionViewCell
         
-        if dataWasFetched == true {
-            cell.originalPhoto.sd_setImage(with: URL(string: images[indexPath.row]), placeholderImage: UIImage(named: "placeholder.png"))
-//            cell.likesLabel.text = Posts[indexPath.row].
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCollectionViewCell", for: indexPath) as! TopCollectionViewCell
+        cell.originalPhoto.sd_setImage(with: URL(string: postsFromJson[indexPath.row].cover!), placeholderImage: UIImage(named: "placeholder.png"))
+        
+        //retrieve likes
+        if let likes = postsFromJson[indexPath.row].likes {
+            cell.likesLabel.text = "\(likes)"
         } else {
-            cell.originalPhoto.image = UIImage(named: "Transparent.png")
+            print("error retriving likes on cell \([indexPath.row])")
+            cell.likesLabel.text = "Error"
         }
+        
+        //retrieve comments
+        if let comments = postsFromJson[indexPath.row].comments {
+            cell.commentsLabel.text = "\(comments)"
+        } else {
+            print("error retriving comments on cell \([indexPath.row])")
+            cell.commentsLabel.text = "Error"
+        }
+        
         return cell
     }
     
@@ -237,12 +258,7 @@ extension dashboardRootVC {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if numberOfPostsToShow > 1 {
-            dataWasFetched = true
-            return numberOfPostsToShow
-        } else {
-            return 8
-        }
+        return postsFromJson.count
     }
 }
 
@@ -257,10 +273,9 @@ extension dashboardRootVC {
             guard let data = data else {return}
             
             do {
-                let postProductDetail = try JSONDecoder().decode([Posts].self, from: data)
+                self.postsFromJson = try JSONDecoder().decode([Posts].self, from: data)
                 
-                completionHandler(postProductDetail)
-                self.numberOfPostsToShow = postProductDetail.count
+//                completionHandler(self.postsFromJson)
             }
             
             catch {
@@ -268,29 +283,6 @@ extension dashboardRootVC {
                 print(error)
             }
         }.resume()
-    }
-    
-    func getImage(from string: String) -> UIImage? {
-        //2. Get valid URL
-        guard let url = URL(string: string)
-            else {
-                print("Unable to create URL")
-                return nil
-        }
-
-        var image: UIImage? = nil
-        do {
-            //3. Get valid data
-            let data = try Data(contentsOf: url, options: [])
-
-            //4. Make image
-            image = UIImage(data: data)
-        }
-        catch {
-            print(error.localizedDescription)
-        }
-
-        return image
     }
 }
 

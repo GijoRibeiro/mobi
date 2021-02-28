@@ -41,6 +41,7 @@ struct Posts: Codable {
     var author: String?
     var cover: String?
     var likes: Int?
+    var comments: Int?
 }
 
 struct Authors: Codable {
