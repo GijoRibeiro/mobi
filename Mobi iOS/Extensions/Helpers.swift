@@ -31,23 +31,17 @@ extension UIView {
     }
 }
 
-struct Root: Codable {
+struct Post {
     var posts: Posts
 }
 
-struct Posts: Codable {
-    var id: Int?
-    var title: String?
-    var author: String?
-    var cover: String?
-    var likes: Int?
-    var comments: Int?
+struct Posts {
+    var Author: String?
+    var Comments: Int?
+    var Likes: Int?
+    var Title: String?
 }
 
-struct Authors: Codable {
-    var authorone: String?
-    var authortwo: String?
-}
 
 
     

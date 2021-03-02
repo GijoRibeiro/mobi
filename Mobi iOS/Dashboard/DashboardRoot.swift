@@ -5,10 +5,7 @@
 //  Created by Rodrigo Ribeiro on 09.02.21.
 //
 
-import Foundation
-import Photos
-import CoreImage
-import CoreImage.CIFilterBuiltins
+import FirebaseDatabase
 import SDWebImage
 import UIKit
 
@@ -27,12 +24,15 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     @IBOutlet weak var winner1: mainBattleController!
     @IBOutlet weak var winner2: mainBattleController!
     
+    let database = Database.database().reference()
+    var databaseHandle: DatabaseHandle?
+    
     //navbar layout
     let customNavBarPro = UIView()
     let profilePicNavBar = UIImageView()
     let welcomeLabelNavBar = UILabel()
     let notificationBell = UIImageView()
-    var numberOfPostsToShow = Int()
+    var numberOfPostsToShow = [String]()
     
     //content
     var dataWasFetched = false
@@ -42,34 +42,25 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     var imagesToPost:[UIImage] = []
     var mainTags: [String] = ["Nerdy", "Playful", "Joy", "Tech", "Musician", "Retro"]
     
-    //photos
-    let filterContext = CIContext()
-    let trendImageUrl = "https://source.unsplash.com/random"
-    let fileUrl = URL(string: "https://source.unsplash.com/random")
+    //photo
     let titleLabel : UILabel = UILabel()
     let subTitleLabel : UILabel = UILabel()
     
     //reusables
     let winnersCard = mainBattleController()
     
-    //json data
-    var postsFromJson = [Posts]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //creates array with images
-        fetchData { (details) in
-            
-            DispatchQueue.main.async {
-                print("reloading data")
+        //create number of posts to show
+        database.child("Post").observe(.value, with: { (snapshot) in
+            let rawValue = snapshot.children
+            self.numberOfPostsToShow.removeAll()
+            for _ in rawValue {
+                self.numberOfPostsToShow.append("Item")
                 self.collectionView.reloadData()
             }
-//            for detail in details {
-//                self.images.append(detail.cover!)
-//                print("Now \(self.images.count) images fetched from the json")
-//            }
-        }
+        })
         
         labelFont(type: welcomeLabelNavBar, weight: "Bold", fontSize: 32)
         welcomeLabelNavBar.text = "Explore Stories"
@@ -92,15 +83,8 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
         
         self.navigationController?.navigationBar.layoutMargins.left = 20
         self.navigationController?.navigationBar.layoutMargins.right = 20
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            print("Data was feteched. Reloading table.")
-            self.collectionView.reloadData()
-        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -216,39 +200,50 @@ extension dashboardRootVC {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-
-        // if let cell = collectionView.cellForItem(at: indexPath) as? TopCollectionViewCell {}
         
-//        jsonResult.activeProfileComplete![0].status = "processed"
+//        let cell = collectionView.cellForItem(at: indexPath) as! TopCollectionViewCell
         
-        print(postsFromJson[indexPath.row].likes!)
-        postsFromJson[indexPath.row].likes! += 1
-        self.collectionView.reloadItems(at: [indexPath])
-        
-        print("tapped")
+        database.child("Post/Post\(indexPath.row)/Likes").setValue(FirebaseDatabase.ServerValue.increment(1))
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCollectionViewCell", for: indexPath) as! TopCollectionViewCell
-        cell.originalPhoto.sd_setImage(with: URL(string: postsFromJson[indexPath.row].cover!), placeholderImage: UIImage(named: "placeholder.png"))
         
-        //retrieve likes
-        if let likes = postsFromJson[indexPath.row].likes {
-            cell.likesLabel.text = "\(likes)"
-        } else {
-            print("error retriving likes on cell \([indexPath.row])")
-            cell.likesLabel.text = "Error"
-        }
+        //listening to likes count
+        databaseHandle = database.child("Post/Post\(indexPath.row)/Likes").observe(.value, with: { (snapshot) in
+            let rawValue = snapshot.value
+            
+            if let passValue = rawValue {
+                cell.likesLabel.text = "\(passValue)"
+            } else {
+                print("Error fetching likes count on cell \(indexPath.row)")
+            }
+        })
         
-        //retrieve comments
-        if let comments = postsFromJson[indexPath.row].comments {
-            cell.commentsLabel.text = "\(comments)"
-        } else {
-            print("error retriving comments on cell \([indexPath.row])")
-            cell.commentsLabel.text = "Error"
-        }
+        //listening to comments count
+        databaseHandle = database.child("Post/Post\(indexPath.row)/Comments").observe(.value, with: { (snapshot) in
+            let rawValue = snapshot.value
+            
+            if let passValue = rawValue {
+                cell.commentsLabel.text = "\(passValue)"
+            } else {
+                print("Error fetching comments count on cell \(indexPath.row)")
+            }
+        })
+        
+        //single event image cover
+        database.child("Post/Post\(indexPath.row)/Cover").observeSingleEvent(of: .value, with: { (snapshot) in
+            let rawValue = snapshot.value
+
+            if let passValue = rawValue {
+                cell.originalPhoto.sd_setImage(with: URL(string: "\(passValue)"), placeholderImage: UIImage(named: "Transparent.png"))
+            } else {
+                cell.originalPhoto.image = UIImage(named: "Transparent.png")
+                print("Error fetching cover image on cell \(indexPath.row)")
+            }
+        })
         
         return cell
     }
@@ -258,7 +253,8 @@ extension dashboardRootVC {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return postsFromJson.count
+        
+        return numberOfPostsToShow.count
     }
 }
 
@@ -266,23 +262,36 @@ extension dashboardRootVC {
     
     func fetchData(completionHandler: @escaping ([Posts]) -> Void) {
         
-        let url = URL(string: "https://raw.githubusercontent.com/GijoRibeiro/mobi/main/db.json")!
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
-            guard let data = data else {return}
-            
-            do {
-                self.postsFromJson = try JSONDecoder().decode([Posts].self, from: data)
-                
+//        URLSession.shared.dataTask(with: mainDataURL) { (data, response, error) in
+//
+//            guard let data = data else {return}
+//
+//            do {
+//                self.postsFromJson = try JSONDecoder().decode([Posts].self, from: data)
+//
 //                completionHandler(self.postsFromJson)
-            }
-            
-            catch {
-                let error = error
-                print(error)
-            }
-        }.resume()
+//            }
+//
+//            catch {
+//                let error = error
+//                print(error)
+//            }
+//        }.resume()
+    }
+    
+    func storeChange(posts:[Posts]){
+//        let encoder = JSONEncoder()
+//        
+//        guard let postsJSONData = try? encoder.encode(posts) else {
+//            fatalError("I'm shit")
+//        }
+//        let postsJSON = String(data: postsJSONData, encoding: .utf8)!
+//        
+//        do {
+//            try postsJSON.write(to: mainDataURL, atomically: true, encoding: .utf8)
+//        } catch {
+//            print(error)
+//        }
     }
 }
 
