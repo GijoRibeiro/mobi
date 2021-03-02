@@ -7,6 +7,15 @@ target 'Mobi iOS' do
 
   pod 'SDWebImage', '~> 5.0'
   pod 'SkeletonView'
+  pod 'Appirater'
+  
+  #Firebase
+  
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Analytics'
+#  pod 'Firebase/Crashlytics'
 
   target 'Mobi iOSTests' do
     inherit! :search_paths
