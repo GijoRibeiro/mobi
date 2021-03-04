@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
 
 extension UIImageView {
     func load(url: URL) {
@@ -30,18 +31,3 @@ extension UIView {
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
 }
-
-struct Post {
-    var posts: Posts
-}
-
-struct Posts {
-    var Author: String?
-    var Comments: Int?
-    var Likes: Int?
-    var Title: String?
-}
-
-
-
-    

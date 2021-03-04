@@ -76,6 +76,7 @@
 		E2A615F425BDD387009CF961 /* Eina01-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D425BDD387009CF961 /* Eina01-Regular.ttf */; };
 		E2A615F525BDD387009CF961 /* Eina01-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A615D525BDD387009CF961 /* Eina01-SemiboldItalic.ttf */; };
 		E2A615FB25BE014E009CF961 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A615FA25BE014D009CF961 /* google.png */; };
+		E2B5C6D325F03F0600AFC7A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5C6D225F03F0600AFC7A5 /* LoginViewController.swift */; };
 		E2B83DAE25E5464E001AF535 /* notificationBell.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B83DAD25E5464E001AF535 /* notificationBell.png */; };
 		E2B83DB825E54993001AF535 /* bellWithFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B83DB725E54992001AF535 /* bellWithFrame.png */; };
 		E2B83DC025E54AC8001AF535 /* notificationBellTick.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B83DBF25E54AC8001AF535 /* notificationBellTick.png */; };
@@ -191,6 +192,7 @@
 		E2A615D425BDD387009CF961 /* Eina01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-Regular.ttf"; sourceTree = "<group>"; };
 		E2A615D525BDD387009CF961 /* Eina01-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eina01-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		E2A615FA25BE014D009CF961 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		E2B5C6D225F03F0600AFC7A5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E2B83DAD25E5464E001AF535 /* notificationBell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notificationBell.png; sourceTree = "<group>"; };
 		E2B83DB725E54992001AF535 /* bellWithFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bellWithFrame.png; path = ../../../../../Desktop/bellWithFrame.png; sourceTree = "<group>"; };
 		E2B83DBF25E54AC8001AF535 /* notificationBellTick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notificationBellTick.png; sourceTree = "<group>"; };
@@ -278,8 +280,9 @@
 			isa = PBXGroup;
 			children = (
 				E23C67C825E300FC008CD441 /* Cards */,
-				E234465325D2B16C00AB83D9 /* DashboardRootNC.swift */,
+				E2D390F125EEB7B50060CD40 /* Navigation Controller */,
 				E234464B25D2B11A00AB83D9 /* DashboardRoot.swift */,
+				E2B5C6D225F03F0600AFC7A5 /* LoginViewController.swift */,
 				E234464325D2ACEA00AB83D9 /* DashboardStoryboard.storyboard */,
 			);
 			path = Dashboard;
@@ -438,6 +441,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		E2D390F125EEB7B50060CD40 /* Navigation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E234465325D2B16C00AB83D9 /* DashboardRootNC.swift */,
+			);
+			path = "Navigation Controller";
+			sourceTree = "<group>";
+		};
 		E2E589EE25BDA9E900834728 = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +521,7 @@
 				E2E589F425BDA9E900834728 /* Frameworks */,
 				E2E589F525BDA9E900834728 /* Resources */,
 				ED3D8881DBE42253DC5E219F /* [CP] Embed Pods Frameworks */,
+				42134159980C22EEEB8CA832 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -548,6 +560,7 @@
 				E2E58A1825BDA9EB00834728 /* Frameworks */,
 				E2E58A1925BDA9EB00834728 /* Resources */,
 				898703352F1EFE4BCC0C62F6 /* [CP] Embed Pods Frameworks */,
+				3CB13E564440E3667621F365 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -690,6 +703,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3CB13E564440E3667621F365 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS-Mobi iOSUITests/Pods-Mobi iOS-Mobi iOSUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS-Mobi iOSUITests/Pods-Mobi iOS-Mobi iOSUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS-Mobi iOSUITests/Pods-Mobi iOS-Mobi iOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42134159980C22EEEB8CA832 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS/Pods-Mobi iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS/Pods-Mobi iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobi iOS/Pods-Mobi iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		760B293BE442EE79582CA884 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -810,6 +857,7 @@
 				E23C67D025E3033E008CD441 /* mainbattlecontroller.swift in Sources */,
 				E234464C25D2B11A00AB83D9 /* DashboardRoot.swift in Sources */,
 				E2E589FD25BDA9E900834728 /* SceneDelegate.swift in Sources */,
+				E2B5C6D325F03F0600AFC7A5 /* LoginViewController.swift in Sources */,
 				E234466E25D3F90500AB83D9 /* TopCollectionViewCell.swift in Sources */,
 				E2799D8425C2EE2600FDC660 /* UpdateScreenWhenRotating.swift in Sources */,
 				E2E58A0525BDA9E900834728 /* Devium_iOS.xcdatamodeld in Sources */,

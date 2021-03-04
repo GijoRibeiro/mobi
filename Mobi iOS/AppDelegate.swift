@@ -8,18 +8,50 @@
 import Firebase
 import UIKit
 import CoreData
+import GoogleSignIn
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
+//    var userProfile = userProfile()
     var window: UIWindow?
-
+    
+    //credentials
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
         
+        GIDSignIn.sharedInstance().clientID = "764631871853-fgbbgaft0lc04fdkim3si9c0nh1h9rh9.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+        
         return true
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        //Sign In
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                print("Login Failed :(")
+                return
+            } else {
+                print("USER LOGGED IN")
+            }
+            
+            let userPhoto = user.profile.imageURL(withDimension: 200)
+            let userPhotoURL = userPhoto!
+            UserDefaults.standard.setValue("\(userPhotoURL)", forKey: "UserPhotoURL")
+            print("\(userPhotoURL)")
+        }
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
     }
 
     // MARK: UISceneSession Lifecycle
