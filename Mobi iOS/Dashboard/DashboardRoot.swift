@@ -5,7 +5,9 @@
 //  Created by Rodrigo Ribeiro on 09.02.21.
 //
 
+import FirebaseAuth
 import FirebaseDatabase
+import GoogleSignIn
 import SDWebImage
 import UIKit
 
@@ -33,6 +35,7 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     let welcomeLabelNavBar = UILabel()
     let notificationBell = UIImageView()
     var numberOfPostsToShow = [String]()
+    var numberOfPostsToShowInt = Int()
     
     //content
     var dataWasFetched = false
@@ -46,15 +49,15 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     let titleLabel : UILabel = UILabel()
     let subTitleLabel : UILabel = UILabel()
     
-    //reusables
-    let winnersCard = mainBattleController()
+    //stored user details
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //create number of posts to show
-        database.child("Post").observe(.value, with: { (snapshot) in
+        database.child("Post").observeSingleEvent(of: .value, with: { (snapshot) in
             let rawValue = snapshot.children
+            
             self.numberOfPostsToShow.removeAll()
             for _ in rawValue {
                 self.numberOfPostsToShow.append("Item")
@@ -68,7 +71,8 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
         welcomeLabelNavBar.numberOfLines = 2
         welcomeLabelNavBar.lineBreakMode = .byWordWrapping
         welcomeLabelNavBar.sizeToFit()
-        profilePicNavBar.image = UIImage(named: "userImage3.png")
+//        profilePicNavBar.image = UIImage(named: "userImage3.png")
+        
         profilePicNavBar.layer.cornerRadius = 16
         profilePicNavBar.clipsToBounds = true
         
@@ -84,12 +88,25 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
         self.navigationController?.navigationBar.layoutMargins.left = 20
         self.navigationController?.navigationBar.layoutMargins.right = 20
         
-
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         minimizeNavBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        let userURL = UserDefaults.standard.string(forKey: "UserPhotoURL")
+        if userURL != nil {
+            let userPhotoURL = userURL!
+            profilePicNavBar.sd_setImage(with: URL(string: "\(userPhotoURL)"), placeholderImage: UIImage(named: "Transparent.png"))
+            print(userPhotoURL)
+        } else {
+            print("no one is logged in :(")
+            profilePicNavBar.image = UIImage(named: "userImage3")
+        }
     }
     
     @objc func trendyTapped(sender:UITapGestureRecognizer){
@@ -202,19 +219,33 @@ extension dashboardRootVC {
         collectionView.deselectItem(at: indexPath, animated: true)
         
 //        let cell = collectionView.cellForItem(at: indexPath) as! TopCollectionViewCell
-        
-        database.child("Post/Post\(indexPath.row)/Likes").setValue(FirebaseDatabase.ServerValue.increment(1))
-        
+//        database.child("Post/Post\(indexPath.row)/Likes").setValue(FirebaseDatabase.ServerValue.increment(1))
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCollectionViewCell", for: indexPath) as! TopCollectionViewCell
+        
+        //pass indexPath inside
+        cell.indexPathFromVC = indexPath.row
+        
+        //check if already liked
+        database.child("Post/Post\(indexPath.row)/LikedBy").observeSingleEvent(of: .value) { (snapshot) in
+            guard let userID = Auth.auth().currentUser?.uid else { return }
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let key = snap.key
+
+                if key == userID {
+                    cell.postLiked = true
+                    cell.fillHeart()
+                    break
+                }
+            }
+        }
         
         //listening to likes count
         databaseHandle = database.child("Post/Post\(indexPath.row)/Likes").observe(.value, with: { (snapshot) in
             let rawValue = snapshot.value
-            
             if let passValue = rawValue {
                 cell.likesLabel.text = "\(passValue)"
             } else {
@@ -225,7 +256,6 @@ extension dashboardRootVC {
         //listening to comments count
         databaseHandle = database.child("Post/Post\(indexPath.row)/Comments").observe(.value, with: { (snapshot) in
             let rawValue = snapshot.value
-            
             if let passValue = rawValue {
                 cell.commentsLabel.text = "\(passValue)"
             } else {
@@ -257,45 +287,3 @@ extension dashboardRootVC {
         return numberOfPostsToShow.count
     }
 }
-
-extension dashboardRootVC {
-    
-    func fetchData(completionHandler: @escaping ([Posts]) -> Void) {
-        
-//        URLSession.shared.dataTask(with: mainDataURL) { (data, response, error) in
-//
-//            guard let data = data else {return}
-//
-//            do {
-//                self.postsFromJson = try JSONDecoder().decode([Posts].self, from: data)
-//
-//                completionHandler(self.postsFromJson)
-//            }
-//
-//            catch {
-//                let error = error
-//                print(error)
-//            }
-//        }.resume()
-    }
-    
-    func storeChange(posts:[Posts]){
-//        let encoder = JSONEncoder()
-//        
-//        guard let postsJSONData = try? encoder.encode(posts) else {
-//            fatalError("I'm shit")
-//        }
-//        let postsJSON = String(data: postsJSONData, encoding: .utf8)!
-//        
-//        do {
-//            try postsJSON.write(to: mainDataURL, atomically: true, encoding: .utf8)
-//        } catch {
-//            print(error)
-//        }
-    }
-}
-
-
-
-
-

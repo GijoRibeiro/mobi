@@ -12,16 +12,24 @@
         <!--Item 2-->
         <scene sceneID="nbR-bD-pHK">
             <objects>
-                <viewController id="OWn-jE-RJb" sceneMemberID="viewController">
+                <viewController id="OWn-jE-RJb" customClass="LoginViewController" customModule="Mobi_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IMp-Fo-FNO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whp-4y-PQv" customClass="mainBattleController" customModule="Mobi_iOS" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whp-4y-PQv" customClass="GIDSignInButton">
                                 <rect key="frame" x="49" y="263" width="317" height="243"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JO-Nu-7Mc">
+                                <rect key="frame" x="184" y="585" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapLogout:" destination="OWn-jE-RJb" eventType="touchUpInside" id="skx-QA-erI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ypw-x5-KOd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

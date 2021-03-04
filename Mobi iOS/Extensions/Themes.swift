@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public var appRoundness: CGFloat = 12
+public var appRoundness: CGFloat = 15
 
 public var primaryColor : UIColor = UIColor(rgb: 0x9568FF)
 public var supportColor : UIColor = UIColor(rgb: 0xEBF2FA)
