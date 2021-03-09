@@ -22,7 +22,7 @@ extension LoginController: UIScrollViewDelegate {
         scrollView.contentSize = CGSize(width: (introView.frame.width * CGFloat(3)), height: introView.frame.height)
 
         let mainText: [String] = ["You're probably bummed out by 80's teachers.","What?! They don't even have phones?","Our mentors are inside the matrix. You're safe with us."]
-        let textColor: [UIColor] = [.black,.black, primaryColor]
+        let textColor: [UIColor] = [.black,.black, Theme.primaryColor]
 
         for x in 0..<3 {
             let page = UIView(frame: CGRect(x: CGFloat(x) * introView.frame.width, y: 0, width: introView.frame.width, height: introView.frame.height))

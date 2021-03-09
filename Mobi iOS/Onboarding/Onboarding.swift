@@ -23,7 +23,7 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
     let photos = PHPhotoLibrary.authorizationStatus()
     var weAskedForPermission : Bool!
     
-    let textColor: [UIColor] = [.black,.black, primaryColor]
+    let textColor: [UIColor] = [.black,.black, Theme.primaryColor]
     let mainTitleText: [String] = ["Look at you...","Ok, let me see","End up cooler",]
     let subText: [String] = ["Lisen, we are the people who care about your growth.","We will analyse all your media to choose what's best to post.","Posting our recommendations will make you stand out in the crowd trends - unlike Pewdiepie.",]
     let images: [UIImage] = [
@@ -88,7 +88,7 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func didPressNext(_ sender: Any) {
         
-        if btnNext.backgroundColor == primaryColor {
+        if btnNext.backgroundColor == Theme.primaryColor {
             
             let storyBoard: UIStoryboard = UIStoryboard(name: "DashboardStoryboard", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "dashboardTC")
@@ -161,11 +161,11 @@ extension OnboardingController {
 extension OnboardingController {
     
     func addBtnNext() {
-        btnNext.layer.cornerRadius = appRoundness
+        btnNext.layer.cornerRadius = Theme.appRoundness
         btnNext.titleLabel?.font = UIFont(name: "Eina01-Bold", size: 16)
         btnNext.semanticContentAttribute = .forceRightToLeft
         
-        btnAskPermission.layer.cornerRadius = appRoundness
+        btnAskPermission.layer.cornerRadius = Theme.appRoundness
         btnAskPermission.layer.borderWidth = 0.5
         btnAskPermission.backgroundColor = .white
         btnAskPermission.layer.borderColor = UIColor.black.cgColor

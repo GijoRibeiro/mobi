@@ -70,7 +70,7 @@ extension LoginController {
     }
     
     func confingMailSignIn() {
-        btnMailSignIn.layer.cornerRadius = appRoundness
+        btnMailSignIn.layer.cornerRadius = Theme.appRoundness
         btnMailSignIn.translatesAutoresizingMaskIntoConstraints = false
         btnMailSignIn.setTitle("Got it...again", for: .normal)
         btnMailSignIn.layer.borderWidth = 0.5
@@ -80,12 +80,11 @@ extension LoginController {
     }
     
     func confingGoogleSignIn() {
-        
         let googleLogo = "google.png"
         let image = UIImage(named: googleLogo)
         let imageView = UIImageView(image: image!)
         
-        btnGoogleSignIn.layer.cornerRadius = appRoundness
+        btnGoogleSignIn.layer.cornerRadius = Theme.appRoundness
         btnGoogleSignIn.setTitle("Sign in with Google", for: .normal)
         btnGoogleSignIn.titleLabel?.font = UIFont(name: "Eina01-Bold", size: 16)
         

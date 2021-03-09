@@ -71,7 +71,6 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
         welcomeLabelNavBar.numberOfLines = 2
         welcomeLabelNavBar.lineBreakMode = .byWordWrapping
         welcomeLabelNavBar.sizeToFit()
-//        profilePicNavBar.image = UIImage(named: "userImage3.png")
         
         profilePicNavBar.layer.cornerRadius = 16
         profilePicNavBar.clipsToBounds = true
@@ -109,6 +108,12 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        collectionView.reloadData()
+    }
+    
     @objc func trendyTapped(sender:UITapGestureRecognizer){
         print("loading...")
     }
@@ -127,7 +132,7 @@ extension dashboardRootVC {
         let expandedTitleWidth: CGFloat = 300
         let expandedNavBarHeight: CGFloat = 120
         let notificationBellSize: CGFloat = 42
-            
+        
         if (self.navigationController?.navigationBar.frame.height)! > 80 {
             //            expanded
             UIView.animate(withDuration: 0.1) {
@@ -162,7 +167,7 @@ extension dashboardRootVC {
         } else {
             
             // minimzed
-            UIView.animate(withDuration: 0.1) {
+            UIView.animate(withDuration: 0.3) {
                 
                 self.customNavBarPro.frame = CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.width)!, height: (self.navigationController?.navigationBar.frame.height)! + 10)
                 self.customNavBarPro.backgroundColor = .systemBackground
@@ -218,8 +223,8 @@ extension dashboardRootVC {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
-//        let cell = collectionView.cellForItem(at: indexPath) as! TopCollectionViewCell
-//        database.child("Post/Post\(indexPath.row)/Likes").setValue(FirebaseDatabase.ServerValue.increment(1))
+        //        let cell = collectionView.cellForItem(at: indexPath) as! TopCollectionViewCell
+        //        database.child("Post/Post\(indexPath.row)/Likes").setValue(FirebaseDatabase.ServerValue.increment(1))
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -230,11 +235,12 @@ extension dashboardRootVC {
         
         //check if already liked
         database.child("Post/Post\(indexPath.row)/LikedBy").observeSingleEvent(of: .value) { (snapshot) in
+            
             guard let userID = Auth.auth().currentUser?.uid else { return }
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let key = snap.key
-
+                
                 if key == userID {
                     cell.postLiked = true
                     cell.fillHeart()
@@ -243,18 +249,14 @@ extension dashboardRootVC {
             }
         }
         
-        //listening to likes count
-        databaseHandle = database.child("Post/Post\(indexPath.row)/Likes").observe(.value, with: { (snapshot) in
-            let rawValue = snapshot.value
-            if let passValue = rawValue {
-                cell.likesLabel.text = "\(passValue)"
-            } else {
-                print("Error fetching likes count on cell \(indexPath.row)")
-            }
+        //listening to likes count - counting child
+        databaseHandle = database.child("Post/Post\(indexPath.row)/LikedBy").observe(.value, with: { (snapshot) in
+            let rawValue = snapshot.childrenCount
+            cell.likesLabel.text = "\(rawValue)"
         })
         
         //listening to comments count
-        databaseHandle = database.child("Post/Post\(indexPath.row)/Comments").observe(.value, with: { (snapshot) in
+        database.child("Post/Post\(indexPath.row)/Comments").observeSingleEvent(of: .value, with: { (snapshot) in
             let rawValue = snapshot.value
             if let passValue = rawValue {
                 cell.commentsLabel.text = "\(passValue)"
@@ -266,7 +268,7 @@ extension dashboardRootVC {
         //single event image cover
         database.child("Post/Post\(indexPath.row)/Cover").observeSingleEvent(of: .value, with: { (snapshot) in
             let rawValue = snapshot.value
-
+            
             if let passValue = rawValue {
                 cell.originalPhoto.sd_setImage(with: URL(string: "\(passValue)"), placeholderImage: UIImage(named: "Transparent.png"))
             } else {
@@ -274,6 +276,13 @@ extension dashboardRootVC {
                 print("Error fetching cover image on cell \(indexPath.row)")
             }
         })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            UIView.animate(withDuration: 0.5) {
+                cell.bottomContainer.alpha = 1
+                cell.iconsStackView.alpha = 1
+            }
+        }
         
         return cell
     }
@@ -286,4 +295,5 @@ extension dashboardRootVC {
         
         return numberOfPostsToShow.count
     }
+    
 }

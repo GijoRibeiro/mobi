@@ -8,11 +8,13 @@
 import Foundation
 import UIKit
 
-public var appRoundness: CGFloat = 15
-
-public var primaryColor : UIColor = UIColor(rgb: 0x9568FF)
-public var supportColor : UIColor = UIColor(rgb: 0xEBF2FA)
-public var blackColor : UIColor = UIColor(rgb: 0x0E0E0E)
+struct Theme {
+    static var appRoundness: CGFloat = 15
+    static var generalPadding: CGFloat = 20
+    static var primaryColor : UIColor = UIColor(rgb: 0x9568FF)
+    static var supportColor : UIColor = UIColor(rgb: 0xEBF2FA)
+    static var blackColor : UIColor = UIColor(rgb: 0x0E0E0E)
+}
 
 func labelFont (type: UILabel, weight: String, fontSize: CGFloat) {
     if weight == "Regular" {type.font = UIFont(name: "Eina01-Regular", size: fontSize)}
