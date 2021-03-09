@@ -28,7 +28,7 @@ extension OnboardingController {
     }
     
     func setPageDots() {
-        pageDots.currentPageIndicatorTintColor = primaryColor
+        pageDots.currentPageIndicatorTintColor = Theme.primaryColor
     }
     
     func showPermissionButton() {
@@ -45,7 +45,7 @@ extension OnboardingController {
         let page = slidesScrollViews.contentOffset.x / slidesScrollViews.frame.size.width
         
         if page == 2 {
-            btnNext.backgroundColor = primaryColor
+            btnNext.backgroundColor = Theme.primaryColor
         } else {
             btnNext.backgroundColor = .black
         }

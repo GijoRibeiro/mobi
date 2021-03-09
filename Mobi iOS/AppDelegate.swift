@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
+        if error != nil {
+            return
+        }
+        
         //Sign In
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
@@ -37,10 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         Auth.auth().signIn(with: credential) { (authResult, error) in
             if let error = error {
                 print(error.localizedDescription)
-                print("Login Failed :(")
+                UserDefaults.standard.setValue(nil, forKey: "UserPhotoURL")
+                UserDefaults.standard.setValue(false, forKey: "isUserSignedIn")
+                print("Sign in Failed :(")
                 return
             } else {
-                print("USER LOGGED IN")
+                print("Signed in successfully")
+                UserDefaults.standard.setValue(true, forKey: "isUserSignedIn")
+                NotificationCenter.default.post(name: Notification.Name("UserSignedIn"), object: nil)
             }
             
             let userPhoto = user.profile.imageURL(withDimension: 200)
