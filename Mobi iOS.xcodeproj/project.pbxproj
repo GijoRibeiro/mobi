@@ -93,6 +93,7 @@
 		E2B83DC525E54C77001AF535 /* bellwithFrame2.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B83DC425E54C77001AF535 /* bellwithFrame2.png */; };
 		E2B83DCA25E54E18001AF535 /* BellWithoutFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B83DC925E54E18001AF535 /* BellWithoutFrame.png */; };
 		E2C3802C25C2BAB200463ABF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3802B25C2BAB200463ABF /* Helpers.swift */; };
+		E2CCF85225F7DC7F0064BA12 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CCF85125F7DC7F0064BA12 /* AddPostViewController.swift */; };
 		E2DE312C25F2D4E700095CB7 /* DashboardTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE312B25F2D4E700095CB7 /* DashboardTabController.swift */; };
 		E2E589FB25BDA9E900834728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E589FA25BDA9E900834728 /* AppDelegate.swift */; };
 		E2E589FD25BDA9E900834728 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E589FC25BDA9E900834728 /* SceneDelegate.swift */; };
@@ -220,6 +221,7 @@
 		E2B83DC425E54C77001AF535 /* bellwithFrame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bellwithFrame2.png; sourceTree = "<group>"; };
 		E2B83DC925E54E18001AF535 /* BellWithoutFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BellWithoutFrame.png; sourceTree = "<group>"; };
 		E2C3802B25C2BAB200463ABF /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		E2CCF85125F7DC7F0064BA12 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		E2DE312B25F2D4E700095CB7 /* DashboardTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabController.swift; sourceTree = "<group>"; };
 		E2E589F725BDA9E900834728 /* Mobi iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobi iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E589FA25BDA9E900834728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 				E2DE312B25F2D4E700095CB7 /* DashboardTabController.swift */,
 				E234464B25D2B11A00AB83D9 /* DashboardRoot.swift */,
 				E2B5C6D225F03F0600AFC7A5 /* LoginViewController.swift */,
+				E2CCF85125F7DC7F0064BA12 /* AddPostViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -910,6 +913,7 @@
 				E2DE312C25F2D4E700095CB7 /* DashboardTabController.swift in Sources */,
 				E2E589FD25BDA9E900834728 /* SceneDelegate.swift in Sources */,
 				E2B5C6D325F03F0600AFC7A5 /* LoginViewController.swift in Sources */,
+				E2CCF85225F7DC7F0064BA12 /* AddPostViewController.swift in Sources */,
 				E234466E25D3F90500AB83D9 /* TopCollectionViewCell.swift in Sources */,
 				E2799D8425C2EE2600FDC660 /* UpdateScreenWhenRotating.swift in Sources */,
 				E2E58A0525BDA9E900834728 /* Devium_iOS.xcdatamodeld in Sources */,

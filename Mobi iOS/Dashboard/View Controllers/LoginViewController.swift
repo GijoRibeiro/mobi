@@ -8,6 +8,7 @@
 import UIKit
 import GoogleSignIn
 import Firebase
+import FirebaseDatabase
 
 class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -19,8 +20,8 @@ class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var loginTableView: UITableView!
     
     let cellReuseIdentifier = "cell"
-    let actionItems = [["See your likes", "Your snippets", "Logout"], ["Sign out"]]
-    let sectionTitles = ["Section 1", "Section 1"]
+    let actionItems = [["Your Likes", "Your snippets", "Logout"], ["Sign out"]]
+    let sectionTitles = ["General", "Account"]
     
     //only shows of signed in
     @IBOutlet weak var ifLoggedInView: UIView!
@@ -96,9 +97,8 @@ class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @objc func checkIfLoggedIn() {
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.3) {
             if UserDefaults.standard.bool(forKey: "isUserSignedIn") {
-                print("checking if logged in : yes.")
                 self.ifLoggedInView.alpha = 1
             } else {
                 self.ifLoggedInView.alpha = 0
@@ -112,7 +112,7 @@ extension LoginViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            break
+            tableView.deselectRow(at: indexPath, animated: true)
         case 1:
             if indexPath.row == 0 {
                 tableView.deselectRow(at: indexPath, animated: true)
@@ -123,6 +123,7 @@ extension LoginViewController {
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return actionItems.count
     }
@@ -131,15 +132,11 @@ extension LoginViewController {
         let headerBG = UIView(frame: CGRect(x: 0, y: 0, width: loginTableView.frame.width, height: 40))
         headerBG.backgroundColor = .systemBackground
         
-        let sectionTitle = UILabel(frame: CGRect(x: Theme.generalPadding, y: 0, width: 100, height: 40))
+        let sectionTitle = UILabel(frame: CGRect(x: Theme.generalPadding, y: 0, width: loginTableView.frame.width, height: 40))
         sectionTitle.textColor = .label
         labelFont(type: sectionTitle, weight: "Bold", fontSize: 24)
         
-        if section == 0 {
-            sectionTitle.text = "General"
-        } else {
-            sectionTitle.text = "Account"
-        }
+        sectionTitle.text = sectionTitles[section]
         
         headerBG.addSubview(sectionTitle)
         return headerBG

@@ -49,21 +49,17 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
     let titleLabel : UILabel = UILabel()
     let subTitleLabel : UILabel = UILabel()
     
+    
+    var dataPostToRetrieve = [PostToRetrieve]()
+    
     //stored user details
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //create number of posts to show
-        database.child("Post").observeSingleEvent(of: .value, with: { (snapshot) in
-            let rawValue = snapshot.children
-            
-            self.numberOfPostsToShow.removeAll()
-            for _ in rawValue {
-                self.numberOfPostsToShow.append("Item")
-                self.collectionView.reloadData()
-            }
-        })
+        
+        fetchData()
+        
         
         labelFont(type: welcomeLabelNavBar, weight: "Bold", fontSize: 32)
         welcomeLabelNavBar.text = "Explore Stories"
@@ -108,14 +104,34 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
-        collectionView.reloadData()
-    }
-    
     @objc func trendyTapped(sender:UITapGestureRecognizer){
         print("loading...")
+    }
+    
+    func fetchData() {
+        
+        self.dataPostToRetrieve.removeAll()
+        
+        //create number of posts to show
+        database.child("Post").observe(.childAdded) { (snapshot) in
+            
+            if let dict = snapshot.value as? [String: Any] {
+                let key = snapshot.key
+                let likes = dict["Likes"] as? Int
+                let likedBy = dict["LikedBy"] as? [String: Any]
+                let comments = dict["Comments"] as? Int
+                let cover = dict["Cover"] as? String
+                
+                let post = PostToRetrieve(likesCount: likes ?? 0,
+                                          commentsCount: comments ?? 0,
+                                          CoverURL: cover ?? "post without image",
+                                          LikedByList: likedBy ?? ["Nil": "Nil"],
+                                          PostIDKey: key)
+                
+                self.dataPostToRetrieve.append(post)
+                self.collectionView.reloadData()
+            }
+        }
     }
 }
 
@@ -230,54 +246,27 @@ extension dashboardRootVC {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCollectionViewCell", for: indexPath) as! TopCollectionViewCell
         
-        //pass indexPath inside
-        cell.indexPathFromVC = indexPath.row
+        cell.postID = "\(dataPostToRetrieve[indexPath.row].PostID)"
+        cell.commentsLabel.text = "\(dataPostToRetrieve[indexPath.row].Comments)"
+        cell.originalPhoto.sd_setImage(with: URL(string: "\(dataPostToRetrieve[indexPath.row].Cover)"), placeholderImage: UIImage(named: "Transparent.png"))
         
-        //check if already liked
-        database.child("Post/Post\(indexPath.row)/LikedBy").observeSingleEvent(of: .value) { (snapshot) in
-            
-            guard let userID = Auth.auth().currentUser?.uid else { return }
-            for child in snapshot.children {
-                let snap = child as! DataSnapshot
-                let key = snap.key
-                
-                if key == userID {
-                    cell.postLiked = true
-                    cell.fillHeart()
-                    break
+        //fill the heart if liked
+        database.child("Post/\(dataPostToRetrieve[indexPath.row].PostID)/LikedBy").observeSingleEvent(of: .value) { (snapshot) in
+            if let userID: String = Auth.auth().currentUser?.uid {
+                for child in snapshot.children {
+                    let snap = child as! DataSnapshot
+                    let key = snap.key
+                    
+                    if key == userID {
+                        cell.fillHeart()
+                    }
                 }
+                //always update like count regardless of result
+                cell.updateLikeCount()
             }
         }
         
-        //listening to likes count - counting child
-        databaseHandle = database.child("Post/Post\(indexPath.row)/LikedBy").observe(.value, with: { (snapshot) in
-            let rawValue = snapshot.childrenCount
-            cell.likesLabel.text = "\(rawValue)"
-        })
-        
-        //listening to comments count
-        database.child("Post/Post\(indexPath.row)/Comments").observeSingleEvent(of: .value, with: { (snapshot) in
-            let rawValue = snapshot.value
-            if let passValue = rawValue {
-                cell.commentsLabel.text = "\(passValue)"
-            } else {
-                print("Error fetching comments count on cell \(indexPath.row)")
-            }
-        })
-        
-        //single event image cover
-        database.child("Post/Post\(indexPath.row)/Cover").observeSingleEvent(of: .value, with: { (snapshot) in
-            let rawValue = snapshot.value
-            
-            if let passValue = rawValue {
-                cell.originalPhoto.sd_setImage(with: URL(string: "\(passValue)"), placeholderImage: UIImage(named: "Transparent.png"))
-            } else {
-                cell.originalPhoto.image = UIImage(named: "Transparent.png")
-                print("Error fetching cover image on cell \(indexPath.row)")
-            }
-        })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             UIView.animate(withDuration: 0.5) {
                 cell.bottomContainer.alpha = 1
                 cell.iconsStackView.alpha = 1
@@ -293,7 +282,23 @@ extension dashboardRootVC {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return numberOfPostsToShow.count
+        return dataPostToRetrieve.count
     }
     
+}
+
+class PostToRetrieve {
+    var Likes: Int
+    var Comments: Int
+    var Cover: String
+    var LikedBy: [String: Any]
+    var PostID: String
+    
+    init(likesCount: Int, commentsCount: Int, CoverURL: String, LikedByList: [String: Any], PostIDKey: String) {
+        Likes = likesCount
+        Comments = commentsCount
+        Cover = CoverURL
+        PostID = PostIDKey
+        LikedBy = LikedByList
+    }
 }
