@@ -25,7 +25,8 @@ class TopCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iconsStackView: UIStackView!
     
     var postLiked = Bool()
-    var indexPathFromVC = Int()
+    var postID = String()
+    var userID = String()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -61,47 +62,33 @@ class TopCollectionViewCell: UICollectionViewCell {
     @IBAction func didTapLike(_ sender: Any) {
         
         let userLogged = Auth.auth().currentUser
+        guard let userID = Auth.auth().currentUser?.uid else { return }
         
         if userLogged != nil {
             if postLiked == true {
                 print("Disliking post")
                 
-                //check if the post is already liked
-                postLiked = false
-                
                 //change icon
                 dislikeHeart()
                 
-                //increment like
-                database.child("Post/Post\(indexPathFromVC)/Likes").setValue(FirebaseDatabase.ServerValue.increment(-1))
-                
-                //get user id
-                guard let userID = Auth.auth().currentUser?.uid else { return }
-                
                 //remove user from inside's post liked data
-                database.child("Post/Post\(indexPathFromVC)/LikedBy").child(userID).removeValue()
+                database.child("Post/\(postID)/LikedBy").child(userID).removeValue()
                 
             } else {
-                print("You liked post \(indexPathFromVC)")
-                
-                postLiked = true
+                print("You liked post \(postID)")
                 
                 //change icon
                 fillHeart()
                 
-                //increment like
-                database.child("Post/Post\(indexPathFromVC)/Likes").setValue(FirebaseDatabase.ServerValue.increment(1))
-                
-                //get user id
-                guard let userID = Auth.auth().currentUser?.uid else { return }
-                
                 //add user inside's post liked data
-                database.child("Post/Post\(indexPathFromVC)/LikedBy").child(userID).setValue("Liked")
+                database.child("Post/\(postID)/LikedBy").child(userID).setValue("Liked")
             }
         } else {
-            print("No account to like post")
+            print("No existing account to like this post")
         }
         
+        updateLikeCount()
+
     }
     
     public func addOriginalPhoto(photo: UIImage) {
@@ -120,17 +107,24 @@ class TopCollectionViewCell: UICollectionViewCell {
     }
     
     func incrementLike(indexPath: IndexPath) {
-        database.child("Post/Post\(indexPathFromVC)/Likes").setValue(FirebaseDatabase.ServerValue.increment(1))
+        database.child("Post/\(postID)/Likes").setValue(FirebaseDatabase.ServerValue.increment(1))
     }
     
     func fillHeart() {
         heartIcon.tintColor = .red
         heartIcon.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        postLiked = true
     }
     
     func dislikeHeart() {
         heartIcon.tintColor = .label
         heartIcon.setImage(UIImage(systemName: "heart"), for: .normal)
+        postLiked = false
     }
     
+    func updateLikeCount() {
+        database.child("Post/\(postID)/LikedBy").observeSingleEvent(of: .value) { (snapshot) in
+            self.likesLabel.text = "\(snapshot.childrenCount)"
+        }
+    }
 }
