@@ -19,6 +19,8 @@ class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var screenTitle: UILabel!
     @IBOutlet weak var loginTableView: UITableView!
     
+    let database = Database.database().reference()
+    
     let cellReuseIdentifier = "cell"
     let actionItems = [["Your Likes", "Your snippets", "Logout"], ["Sign out"]]
     let sectionTitles = ["General", "Account"]
@@ -110,9 +112,27 @@ class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
 extension LoginViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         switch indexPath.section {
         case 0:
             tableView.deselectRow(at: indexPath, animated: true)
+               
+            let post: [String: Any] = ["Cover": "https://survivethis.news/wp-content/uploads/2020/12/Hu-Tao-Genshin.jpg",
+                         "Author": "Gijo Amarante",
+                         "Title": "Hu Tao 900m DMG",
+                         "AuthorPhotoURL": "",
+                         "Comments": 400,
+                         "timestamp": [".sv": "timestamp"]]
+            
+            let postRef = database.child("Post").childByAutoId()
+            postRef.setValue(post) { (error, ref) in
+                if error != nil {
+                    print(error?.localizedDescription as Any)
+                } else {
+                    print(Date())
+                }
+            }
+            
         case 1:
             if indexPath.row == 0 {
                 tableView.deselectRow(at: indexPath, animated: true)

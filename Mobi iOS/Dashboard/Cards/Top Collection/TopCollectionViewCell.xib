@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="357" height="345"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
-                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhi-4v-WIF">
+                    <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhi-4v-WIF">
                         <rect key="frame" x="0.0" y="0.0" width="357" height="345"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -55,7 +55,34 @@
                         </view>
                         <blurEffect style="regular"/>
                     </visualEffectView>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GaF-FW-zEl">
+                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="fm6-CO-z4e" userLabel="AuthorPhoto" customClass="UIImageView">
+                        <rect key="frame" x="24" y="24" width="45" height="45"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="JyC-5q-r15"/>
+                            <constraint firstAttribute="width" constant="45" id="bte-g6-btS"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e33-8O-714" userLabel="AuthorName">
+                        <rect key="frame" x="77" y="46" width="200" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="IvY-WP-7G0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkD-x7-LbJ" userLabel="PostTitle">
+                        <rect key="frame" x="77" y="26" width="200" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="MP8-Bi-1LQ"/>
+                            <constraint firstAttribute="width" constant="200" id="kmv-mQ-Vzo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GaF-FW-zEl" userLabel="postTitle">
                         <rect key="frame" x="104" y="280" width="149" height="30"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="feh-w8-gKv">
@@ -68,7 +95,8 @@
                                             <constraint firstAttribute="width" constant="30" id="oh5-dt-VFL"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
-                                        <state key="normal" image="bubble.middle.bottom" catalog="system"/>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="sword.png"/>
                                         <connections>
                                             <action selector="didTapLike:" destination="gTV-IL-0wX" eventType="touchUpInside" id="a6l-mk-qvf"/>
                                         </connections>
@@ -119,27 +147,37 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="vkD-x7-LbJ" firstAttribute="leading" secondItem="fm6-CO-z4e" secondAttribute="trailing" constant="8" id="22r-B1-4bJ"/>
+                <constraint firstItem="e33-8O-714" firstAttribute="width" secondItem="vkD-x7-LbJ" secondAttribute="width" id="33Y-Be-SD3"/>
                 <constraint firstAttribute="bottom" secondItem="GaF-FW-zEl" secondAttribute="bottom" constant="35" id="4YT-82-epp"/>
                 <constraint firstAttribute="trailing" secondItem="UQC-yk-owu" secondAttribute="trailing" id="4oB-h5-5EF"/>
                 <constraint firstAttribute="trailing" secondItem="Szc-8N-qZ3" secondAttribute="trailing" id="7yQ-9l-sNF"/>
+                <constraint firstItem="fm6-CO-z4e" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="8Pt-2T-q5Y"/>
                 <constraint firstAttribute="bottom" secondItem="Dhi-4v-WIF" secondAttribute="bottom" id="FZ0-tr-EAj"/>
                 <constraint firstItem="jd4-PC-QEj" firstAttribute="leading" secondItem="GaF-FW-zEl" secondAttribute="leading" constant="-15" id="Kmt-aC-87P"/>
                 <constraint firstItem="jd4-PC-QEj" firstAttribute="top" secondItem="GaF-FW-zEl" secondAttribute="top" constant="-8" id="LH4-Sy-ppF"/>
                 <constraint firstAttribute="bottom" secondItem="UQC-yk-owu" secondAttribute="bottom" id="OsB-Vh-v9U"/>
                 <constraint firstItem="jd4-PC-QEj" firstAttribute="trailing" secondItem="GaF-FW-zEl" secondAttribute="trailing" constant="15" id="TF1-Xc-WEU"/>
+                <constraint firstItem="vkD-x7-LbJ" firstAttribute="top" secondItem="fm6-CO-z4e" secondAttribute="top" constant="2" id="XHm-CT-uRM"/>
                 <constraint firstItem="Dhi-4v-WIF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Xl8-is-pOR"/>
                 <constraint firstItem="Szc-8N-qZ3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="a5S-66-e8V"/>
                 <constraint firstItem="UQC-yk-owu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="che-qv-dNH"/>
+                <constraint firstItem="e33-8O-714" firstAttribute="top" secondItem="vkD-x7-LbJ" secondAttribute="bottom" id="iu8-be-Mb9"/>
                 <constraint firstItem="jd4-PC-QEj" firstAttribute="bottom" secondItem="GaF-FW-zEl" secondAttribute="bottom" constant="6" id="kVY-vo-jqz"/>
                 <constraint firstItem="Dhi-4v-WIF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kaQ-Qx-usg"/>
                 <constraint firstAttribute="trailing" secondItem="Dhi-4v-WIF" secondAttribute="trailing" id="km8-Jf-iVy"/>
                 <constraint firstItem="GaF-FW-zEl" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="lL1-2x-jvT"/>
                 <constraint firstItem="Szc-8N-qZ3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="n3k-p1-Gny"/>
+                <constraint firstItem="e33-8O-714" firstAttribute="leading" secondItem="vkD-x7-LbJ" secondAttribute="leading" id="rw9-vA-ZZq"/>
                 <constraint firstItem="UQC-yk-owu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sEu-V4-5oY"/>
+                <constraint firstItem="e33-8O-714" firstAttribute="height" secondItem="vkD-x7-LbJ" secondAttribute="height" multiplier="1.2" id="uOV-nY-bUJ"/>
                 <constraint firstAttribute="bottom" secondItem="Szc-8N-qZ3" secondAttribute="bottom" id="vv9-jA-2v8"/>
+                <constraint firstItem="fm6-CO-z4e" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="24" id="wTp-rd-015"/>
             </constraints>
             <size key="customSize" width="237" height="185"/>
             <connections>
+                <outlet property="authorName" destination="e33-8O-714" id="767-2m-2z1"/>
+                <outlet property="authorPhoto" destination="fm6-CO-z4e" id="J9Z-Oc-Lmc"/>
                 <outlet property="blackFade" destination="Dhi-4v-WIF" id="H8d-YC-tfX"/>
                 <outlet property="bottomContainer" destination="jd4-PC-QEj" id="FEb-tp-dZl"/>
                 <outlet property="commentsLabel" destination="sYB-mv-R53" id="sXc-YL-9ke"/>
@@ -149,13 +187,14 @@
                 <outlet property="loadingView" destination="UQC-yk-owu" id="hHN-Mz-5Vz"/>
                 <outlet property="mainTag" destination="8wp-Rz-yop" id="vvB-IO-6Po"/>
                 <outlet property="originalPhoto" destination="Szc-8N-qZ3" id="0qd-Xw-alh"/>
+                <outlet property="postTitle" destination="vkD-x7-LbJ" id="Tw5-v7-FeG"/>
             </connections>
             <point key="canvasLocation" x="157.24637681159422" y="120.87053571428571"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="bubble.middle.bottom" catalog="system" width="128" height="110"/>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="sword.png" width="90" height="90"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
