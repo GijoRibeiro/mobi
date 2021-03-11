@@ -108,12 +108,23 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
         print("loading...")
     }
     
+    func convertTimestamp(serverTimestamp: Double) -> String {
+            let x = serverTimestamp / 1000
+            let date = NSDate(timeIntervalSince1970: x)
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            formatter.timeStyle = .medium
+
+            return formatter.string(from: date as Date)
+    }
+    
     func fetchData() {
         
         self.dataPostToRetrieve.removeAll()
         
         //create number of posts to show
-        database.child("Post").observe(.childAdded) { (snapshot) in
+//        database.child("Post").observe(.childAdded) { (snapshot) in
+        database.child("Post").queryOrdered(byChild: "timestamp").observe(.childAdded) { (snapshot) in
             
             if let dict = snapshot.value as? [String: Any] {
                 let key = snapshot.key
@@ -121,17 +132,29 @@ class dashboardRootVC: UIViewController,  UICollectionViewDelegate, UICollection
                 let likedBy = dict["LikedBy"] as? [String: Any]
                 let comments = dict["Comments"] as? Int
                 let cover = dict["Cover"] as? String
+                let author = dict["Author"] as? String
+                let title = dict["Title"] as? String
+                let authorPhoto = dict["AuthorPhotoURL"] as? String
+                let createdAt = dict["timestamp"] as? Double
                 
                 let post = PostToRetrieve(likesCount: likes ?? 0,
                                           commentsCount: comments ?? 0,
-                                          CoverURL: cover ?? "post without image",
+                                          CoverURL: cover ?? "No Image",
                                           LikedByList: likedBy ?? ["Nil": "Nil"],
-                                          PostIDKey: key)
+                                          PostIDKey: key,
+                                          AuthorName: author ?? "Error retrieving",
+                                          TitleName: title ?? "Error retrieving",
+                                          AuthorPhotoURL: authorPhoto ?? "No author photo",
+                                          setCreatedAt: createdAt ?? 0.0)
                 
                 self.dataPostToRetrieve.append(post)
                 self.collectionView.reloadData()
+                self.dataPostToRetrieve.sort(by: {$0.createdAt > $1.createdAt})
+                print(post.createdAt)
             }
         }
+        
+
     }
 }
 
@@ -248,10 +271,22 @@ extension dashboardRootVC {
         
         cell.postID = "\(dataPostToRetrieve[indexPath.row].PostID)"
         cell.commentsLabel.text = "\(dataPostToRetrieve[indexPath.row].Comments)"
+        
+        //main title
+        cell.postTitle.text = "\(dataPostToRetrieve[indexPath.row].Title)"
+        
+        //author
+        cell.authorName.text = "\(dataPostToRetrieve[indexPath.row].Author)"
+        
+        //author photo
+        cell.authorPhoto.sd_setImage(with: URL(string: "\(dataPostToRetrieve[indexPath.row].AuthorPhoto)"), placeholderImage: UIImage(named: "Transparent.png"))
+        
+        //post photo
         cell.originalPhoto.sd_setImage(with: URL(string: "\(dataPostToRetrieve[indexPath.row].Cover)"), placeholderImage: UIImage(named: "Transparent.png"))
         
         //fill the heart if liked
         database.child("Post/\(dataPostToRetrieve[indexPath.row].PostID)/LikedBy").observeSingleEvent(of: .value) { (snapshot) in
+            
             if let userID: String = Auth.auth().currentUser?.uid {
                 for child in snapshot.children {
                     let snap = child as! DataSnapshot
@@ -261,9 +296,10 @@ extension dashboardRootVC {
                         cell.fillHeart()
                     }
                 }
-                //always update like count regardless of result
-                cell.updateLikeCount()
             }
+            
+            //always update like count regardless of result
+            cell.updateLikeCount()
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
@@ -293,12 +329,34 @@ class PostToRetrieve {
     var Cover: String
     var LikedBy: [String: Any]
     var PostID: String
+    var Author: String
+    var AuthorPhoto: String
+    var Title: String
+    var createdAt: Double
     
-    init(likesCount: Int, commentsCount: Int, CoverURL: String, LikedByList: [String: Any], PostIDKey: String) {
+    init(likesCount: Int, commentsCount: Int, CoverURL: String, LikedByList: [String: Any], PostIDKey: String, AuthorName: String, TitleName: String, AuthorPhotoURL: String, setCreatedAt: Double) {
         Likes = likesCount
         Comments = commentsCount
         Cover = CoverURL
         PostID = PostIDKey
         LikedBy = LikedByList
+        Author = "by \(AuthorName)"
+        Title = TitleName
+        AuthorPhoto = AuthorPhotoURL
+        createdAt = setCreatedAt
+    }
+}
+
+struct PostToCreate {
+    var Cover: String
+    var Author: String
+    var AuthorPhoto: String
+    var Title: String
+    
+    init(CoverURL: String, AuthorName: String, TitleName: String, AuthorPhotoURL: String) {
+        Cover = CoverURL
+        Author = "by \(AuthorName)"
+        Title = TitleName
+        AuthorPhoto = AuthorPhotoURL
     }
 }

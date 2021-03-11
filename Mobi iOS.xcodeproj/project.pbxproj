@@ -49,6 +49,7 @@
 		E26DF6A625D04D1200327981 /* arrowdots.png in Resources */ = {isa = PBXBuildFile; fileRef = E26DF6A525D04D1200327981 /* arrowdots.png */; };
 		E26DF6AB25D04DAD00327981 /* arrowplay.png in Resources */ = {isa = PBXBuildFile; fileRef = E26DF6AA25D04DAD00327981 /* arrowplay.png */; };
 		E2799D8425C2EE2600FDC660 /* UpdateScreenWhenRotating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2799D8325C2EE2600FDC660 /* UpdateScreenWhenRotating.swift */; };
+		E28680D425FA8CFC00DF1680 /* sword.png in Resources */ = {isa = PBXBuildFile; fileRef = E28680D325FA8CFC00DF1680 /* sword.png */; };
 		E288998625E478BF00282A22 /* userImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E288998525E478BF00282A22 /* userImage.png */; };
 		E288998B25E4793B00282A22 /* userImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = E288998A25E4793B00282A22 /* userImage2.png */; };
 		E288999025E479D700282A22 /* userImage3.png in Resources */ = {isa = PBXBuildFile; fileRef = E288998F25E479D700282A22 /* userImage3.png */; };
@@ -177,6 +178,7 @@
 		E26DF6A525D04D1200327981 /* arrowdots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowdots.png; sourceTree = "<group>"; };
 		E26DF6AA25D04DAD00327981 /* arrowplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowplay.png; sourceTree = "<group>"; };
 		E2799D8325C2EE2600FDC660 /* UpdateScreenWhenRotating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateScreenWhenRotating.swift; sourceTree = "<group>"; };
+		E28680D325FA8CFC00DF1680 /* sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sword.png; sourceTree = "<group>"; };
 		E288998525E478BF00282A22 /* userImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userImage.png; sourceTree = "<group>"; };
 		E288998A25E4793B00282A22 /* userImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userImage2.png; sourceTree = "<group>"; };
 		E288998F25E479D700282A22 /* userImage3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userImage3.png; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 		E2A615F925BE0134009CF961 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E28680D325FA8CFC00DF1680 /* sword.png */,
 				E2344BAA25F45349006A5D0A /* Howdy.png */,
 				E24B1F5125F3232F00AE6568 /* search-selected.png */,
 				E24B1F5225F3232F00AE6568 /* search.png */,
@@ -722,6 +725,7 @@
 				E2E58A0725BDA9EB00834728 /* Assets.xcassets in Resources */,
 				E2A615E425BDD387009CF961 /* Eina04-Regular.ttf in Resources */,
 				E26DF6A125D0498E00327981 /* Vectorwhite.png in Resources */,
+				E28680D425FA8CFC00DF1680 /* sword.png in Resources */,
 				E2F8C2C225C32DEE00BE9736 /* Open Doodles.png in Resources */,
 				E2A615E825BDD387009CF961 /* Eina01-LightItalic.ttf in Resources */,
 				E2A615ED25BDD387009CF961 /* Eina02-SemiboldItalic.ttf in Resources */,

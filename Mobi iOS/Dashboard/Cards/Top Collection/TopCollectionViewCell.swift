@@ -23,6 +23,9 @@ class TopCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var heartIcon: UIButton!
     @IBOutlet weak var iconsStackView: UIStackView!
+    @IBOutlet weak var authorPhoto: UIImageView!
+    @IBOutlet weak var authorName: UILabel!
+    @IBOutlet weak var postTitle: UILabel!
     
     var postLiked = Bool()
     var postID = String()
@@ -30,6 +33,11 @@ class TopCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        authorPhoto.layer.cornerRadius = Theme.appRoundness
+        authorPhoto.clipsToBounds = true
+        labelFont(type: authorName, weight: "Regular", fontSize: 14)
+        labelFont(type: postTitle, weight: "Bold", fontSize: 14)
         
         iconsStackView.alpha = 0
         bottomContainer.alpha = 0
@@ -86,9 +94,7 @@ class TopCollectionViewCell: UICollectionViewCell {
         } else {
             print("No existing account to like this post")
         }
-        
         updateLikeCount()
-
     }
     
     public func addOriginalPhoto(photo: UIImage) {
